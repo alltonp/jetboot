@@ -11,10 +11,10 @@ object Bootstrap {
   val panelHeading = "panel-heading"
 
   val panelPrimary = "panel-primary"
-  val panelSuccess ="panel-success"
-  val panelInfo ="panel-info"
-  val panelWarning ="panel-warning"
-  val panelDanger ="panel-danger"
+  val panelSuccess = "panel-success"
+  val panelInfo = "panel-info"
+  val panelWarning = "panel-warning"
+  val panelDanger = "panel-danger"
 
   val pullLeft = "pull-left"
   val pullRight = "pull-right"
