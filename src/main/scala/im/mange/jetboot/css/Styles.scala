@@ -1,6 +1,6 @@
 package im.mange.jetboot.css
 
-object Css extends StyleKeys with StyleValues
+
 
 case class Styles(private val styles: Style*) {
   val render = styles.map(_.render).mkString(" ")
