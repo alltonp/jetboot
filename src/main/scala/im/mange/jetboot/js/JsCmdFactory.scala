@@ -1,4 +1,4 @@
-package im.mange.jetboot.lift
+package im.mange.jetboot.js
 
 import net.liftweb.http.js.JE.ValById
 import net.liftweb.http.js.JsCmds.{SetHtml, _}

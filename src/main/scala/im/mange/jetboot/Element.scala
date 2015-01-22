@@ -1,6 +1,6 @@
 package im.mange.jetboot
 
-import im.mange.jetboot.lift.JsCmdFactory._
+import im.mange.jetboot.js.JsCmdFactory._
 
 //TODO: starting to wonder if this should be a trait actually
 //TODO: and maybe have a Widget class that widgets extend
