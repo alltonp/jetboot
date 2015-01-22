@@ -1,4 +1,4 @@
-package im.mange.jetboot
+package im.mange.jetboot.widget
 
 import im.mange.jetboot.css.{Classes, Styles}
 
