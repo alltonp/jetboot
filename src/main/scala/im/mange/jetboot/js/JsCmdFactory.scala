@@ -7,7 +7,6 @@ import net.liftweb.http.js.{JsCmd, JsExp, JsMember}
 
 import scala.xml.NodeSeq
 
-//TODO: rename lift to js
 object JsCmdFactory {
   def showElement(id: String): JsCmd = JqId(id) ~> JqShow()
   def showAllElements(cssClass: String): JsCmd = JqClass(cssClass) ~> JqShow()
