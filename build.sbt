@@ -7,9 +7,9 @@ organization := "im.mange"
 
 version := Try(sys.env("TRAVIS_BUILD_NUMBER")).map("0.0." + _).getOrElse("1.0-SNAPSHOT")
 
-scalaVersion:= "2.10.1"
+scalaVersion:= "2.10.4"
 
-crossScalaVersions := Seq("2.10.4"/*, "2.11.0"*/)
+crossScalaVersions := Seq("2.10.4", "2.11.4")
 
 resolvers ++= Seq(
   "Sonatype OSS Releases" at "http://oss.sonatype.org/content/repositories/releases/"
@@ -18,7 +18,7 @@ resolvers ++= Seq(
 libraryDependencies ++= Seq(
 	"junit" % "junit" % "4.11" % "test->default",
 	"org.scalatest" %% "scalatest" % "2.2.0" % "test",
-  "net.liftweb" %% "lift-webkit" % "2.5" //TODO: should be 2.6
+  "net.liftweb" %% "lift-webkit" % "2.6" //TODO: should be 2.6
 )
 
 libraryDependencies := {
