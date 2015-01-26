@@ -9,8 +9,6 @@ version := Try(sys.env("TRAVIS_BUILD_NUMBER")).map("0.0." + _).getOrElse("1.0-SN
 
 scalaVersion:= "2.11.4"
 
-//crossScalaVersions := Seq("2.10.4", "2.11.4")
-
 resolvers ++= Seq(
   "Sonatype OSS Releases" at "http://oss.sonatype.org/content/repositories/releases/"
 )
@@ -18,13 +16,6 @@ resolvers ++= Seq(
 libraryDependencies ++= Seq(
   "net.liftweb" %% "lift-webkit" % "2.6"
 )
-
-//libraryDependencies := {
-//  CrossVersion.partialVersion(scalaVersion.value) match {
-//    case Some((2, scalaMajor)) if scalaMajor >= 11 => libraryDependencies.value :+ "org.scala-lang.modules" %% "scala-xml" % "1.0.1"
-//    case _ => libraryDependencies.value
-//  }
-//}
 
 sonatypeSettings
 
