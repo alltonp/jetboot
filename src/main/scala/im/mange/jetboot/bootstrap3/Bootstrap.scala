@@ -51,6 +51,13 @@ object Bootstrap {
   val labelWarning = "label-warning"
   val labelDanger = "label-danger"
 
+  val progress = "progress"
+  val progressBar = "progress-bar"
+  val progressBarSuccess = "progress-bar-success"
+  val progressBarWarning = "progress-bar-warning"
+  val progressBarDanger = "progress-bar-danger"
+  val progressStriped = "progress-striped"
+
   //TODO:
   //btn
   //btn-default
