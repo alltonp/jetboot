@@ -14,8 +14,7 @@ resolvers ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "net.liftweb" %% "lift-webkit" % "2.6",
-  "org.scala-lang.modules" %% "scala-xml" % "1.0.1"
+  "net.liftweb" %% "lift-webkit" % "2.6"
 )
 
 sonatypeSettings
