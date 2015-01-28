@@ -7,7 +7,7 @@ organization := "im.mange"
 
 version := Try(sys.env("TRAVIS_BUILD_NUMBER")).map("0.0." + _).getOrElse("1.0-SNAPSHOT")
 
-scalaVersion:= "2.11.4"
+scalaVersion:= "2.11.5"
 
 resolvers ++= Seq(
   "Sonatype OSS Releases" at "http://oss.sonatype.org/content/repositories/releases/"
