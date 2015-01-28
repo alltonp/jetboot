@@ -1,7 +1,7 @@
 package im.mange.jetboot.widget
 
 trait LinkButton extends Button {
-  import im.mange.jetboot.js.JsCmdFactory._
+  import im.mange.jetboot.Js._
 
   //TODO: target should be configurable
   def url: String

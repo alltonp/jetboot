@@ -1,6 +1,6 @@
 package im.mange.jetboot.widget
 
-import im.mange.jetboot.js.JsCmdFactory._
+import im.mange.jetboot.Js._
 import im.mange.jetboot.{Disableable, Hideable, Input, Styleable}
 import net.liftweb.http.SHtml
 import net.liftweb.http.js.JE.JsRaw
