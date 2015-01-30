@@ -29,6 +29,7 @@ object Bootstrap {
   val textJustify = "text-justify"
 
   val container = "container"
+  val containerFluid = "container-fluid"
   val row = "row"
   val colLg6 = "col-lg-6"
   val colLg12 = "col-lg-12"
