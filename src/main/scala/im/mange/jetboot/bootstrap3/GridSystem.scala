@@ -7,6 +7,7 @@ import im.mange.jetboot.{Composite, Renderable, Styleable}
 object GridSystem {
   //TODO: fix annoying name clashes with Bootstrap._
   def container(rows: Row*) = Container(rows)
+  def containerFluid(rows: Row*) = Container(rows, fluid = true)
   def row(spans: Column*) = Row(spans)
   def col(columns: Int, content: Renderable, offset: Int) = Column(columns, content, offset)
   def col(columns: Int, content: Renderable*): Column = col(columns, Composite(content:_*), 0)
