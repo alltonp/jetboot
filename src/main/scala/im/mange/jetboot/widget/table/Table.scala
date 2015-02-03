@@ -30,7 +30,7 @@ case class TableRow(cells: Seq[Renderable]) extends Styleable
 
 case class TableModel(header: TableHeaders, rows: Seq[TableRow])
 
-case class SimpleTable(tableModel: TableModel) extends Renderable with Styleable {
+case class Table(tableModel: TableModel) extends Renderable with Styleable {
   def render = table(
     thead(
       tr(
