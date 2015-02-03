@@ -22,19 +22,14 @@ case class TableHeaders(headers: Seq[TableHeader]) {
   def trStyles(s: Style*): this.type = trStyles(Styles(s:_*))
 }
 
-//TODO: vargs would be nicer
 case class TableHeader(content: Renderable) extends Renderable with Styleable {
   def render = th(content).classes(classes).styles(styles).render
 }
 
-//TODO: vargs would be nicer
 case class TableRow(cells: Seq[Renderable]) extends Styleable
 
-//TODO: vargs would be nicer
-//TODO: Styleable?
 case class TableModel(header: TableHeaders, rows: Seq[TableRow])
 
-//TODO: trait?
 case class SimpleTable(tableModel: TableModel) extends Renderable with Styleable {
   def render = table(
     thead(
