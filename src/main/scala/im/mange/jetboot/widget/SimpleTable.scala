@@ -9,8 +9,8 @@ object SimpleTable {
   implicit def fromString(ss: String) = new RenderableMagnet { def apply() = R(ss) }
   implicit def fromR(r: Renderable) = new RenderableMagnet { def apply() = r }
 
-  def table(headers: TableHeaders, rows: TableRow*) = Table(TableModel(headers, rows.toList))
-  def table(headers: TableHeaders, rows: List[TableRow]) = Table(TableModel(headers, rows))
+  def simpleTable(headers: TableHeaders, rows: TableRow*) = Table(TableModel(headers, rows.toList))
+  def simpleTable(headers: TableHeaders, rows: List[TableRow]) = Table(TableModel(headers, rows))
   def headers(tableHeaders: TableHeader*) = TableHeaders(tableHeaders.toList)
   def headers(tableHeaders: List[TableHeader]) = TableHeaders(tableHeaders)
   def header(r: Renderable) = TableHeader(r)
