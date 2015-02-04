@@ -4,6 +4,19 @@ object Bootstrap {
   val alert = "alert"
   val alertDanger = "alert-danger"
 
+  val btn = "btn"
+  val btnLg = "btn-lg"
+  val btnSml = "btn-sml"
+  val btnXs = "btn-xs"
+  val btnBlock = "btn-block"
+  val btnDefault = "btn-default"
+  val btnPrimary = "btn-primary"
+  val btnSuccess = "btn-success"
+  val btnInfo = "btn-info"
+  val btnWarning = "btn-warning"
+  val btnDanger = "btn-danger"
+  val btnLink = "btn-link"
+
   val panel = "panel"
   val panelBody = "panel-body"
   val panelDefault = "panel-default"
@@ -39,10 +52,16 @@ object Bootstrap {
   def glyphicon(name: String) = "glyphicon glyphicon-" + name
 
   val formControl = "form-control"
+  val formGroup = "form-group"
+  val formInline = "form-inline"
+  val inputSm = "input-sm"
+  val inputLg = "input-lg"
   val inputGroupAddon = "input-group-addon"
   val inputGroup = "input-group"
   val inputGroupSm = "input-group-sm"
+  val inputGroupLg = "input-group-lg"
   val inputGroupBtn = "input-group-btn"
+  val helpBlock = "help-block"
 
   val label = "label"
   val labelDefault = "label-default"
