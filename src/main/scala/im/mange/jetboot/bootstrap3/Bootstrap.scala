@@ -87,8 +87,4 @@ object Bootstrap {
   val progressBarWarning = "progress-bar-warning"
   val progressBarDanger = "progress-bar-danger"
   val progressStriped = "progress-striped"
-
-  //TODO:
-  //btn
-  //btn-default
 }
