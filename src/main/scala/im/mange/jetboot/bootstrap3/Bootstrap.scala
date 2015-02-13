@@ -17,6 +17,13 @@ object Bootstrap {
   val btnDanger = "btn-danger"
   val btnLink = "btn-link"
 
+  val h1 = "h1"
+  val h2 = "h2"
+  val h3 = "h3"
+  val h4 = "h4"
+  val h5 = "h5"
+  val h6 = "h6"
+
   val panel = "panel"
   val panelBody = "panel-body"
   val panelDefault = "panel-default"
