@@ -60,6 +60,9 @@ object Bootstrap {
 
   val formControl = "form-control"
   val formGroup = "form-group"
+  val formGroupSm = "form-group-sm"
+  val formGroupLg = "form-group-lg"
+
   val formInline = "form-inline"
   val inputSm = "input-sm"
   val inputLg = "input-lg"
