@@ -34,11 +34,14 @@ trait StyleKeys {
   def overflowX(value: String) = Style("overflow-x", value)
   def overflowY(value: String) = Style("overflow-y", value)
   //TODO: add a padding() with the args for the shortcuts and their names
-  def padding(value: String) = Style("padding", value)
   def paddingTop(value: String) = Style("padding-top", value)
   def paddingRight(value: String) = Style("padding-right", value)
   def paddingBottom(value: String) = Style("padding-bottom", value)
   def paddingLeft(value: String) = Style("padding-left", value)
+  def padding(top: String, right: String, bottom: String, left: String) = Style("padding", List(top, right, bottom, left).mkString(" "))
+  def padding(top: String, rightAndLeft: String, bottom: String) = Style("padding", List(top, rightAndLeft, bottom).mkString(" "))
+  def padding(topAndBottom: String, rightAndLeft: String) = Style("padding", List(topAndBottom, rightAndLeft).mkString(" "))
+  def padding(value: String) = Style("padding", value)
   def textAlign(value: String) = Style("text-align", value)
   def textDecoration(value: String) = Style("text-decoration", value)
   def width(value: String) = Style("width", value)
@@ -62,6 +65,7 @@ trait StyleValues {
   val none = "none"
   val nowrap = "nowrap"
   val right = "right"
+  val scroll = "scroll"
   val small = "small"
   val smaller = "smaller"
   val solid = "solid"
