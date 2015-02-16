@@ -2,9 +2,8 @@ package im.mange.jetboot
 
 import scala.xml.{NodeSeq, Text}
 
-//TODO: do we need an S for Styleable?
-//TODO: make an apply that takes (Renderable *) .. using a Composite underneath
 object R {
+  def apply(renderables: Renderable*): Renderable = R(Composite(renderables:_*))
   def apply(content: String): Renderable = R(Text(content))
   def apply(): Renderable = R(NodeSeq.Empty)
 }
