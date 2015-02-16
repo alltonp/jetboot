@@ -6,8 +6,8 @@ import im.mange.jetboot.html._
 //TODO: this should be SimpleElements or HtmlElements or maybe just Html (so we can import Html._)
 object Html {
   //TODO: think about Div and AnonDiv (if no id)
-  def div(id: String, content: Renderable*) = Div(id, Composite(content:_*))
-  def div(content: Renderable*): Div = div("", content:_*)
+  def div(id: Option[String], content: Renderable*) = Div(id.getOrElse(""), Composite(content:_*))
+  def div(content: Renderable*): Div = div(None, content:_*)
 
   def li(content: Renderable*) = Li(Composite(content:_*))
 

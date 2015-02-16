@@ -9,8 +9,8 @@ case class Collapsible(id: String, label: String, theContent: Renderable, expand
 
   private var expanded = expandedByDefault
   private val link = Element("collapsibleLink_" + id)
-  private val collapsibleContent = div(id="collapsibleContent_" + id, theContent).classes(if (expandedByDefault) "" else Css.hidden)
-  private val contentHolder = div(id="collapsibleSection_" + id, content).styles(marginBottom("10px"))
+  private val collapsibleContent = div(Some("collapsibleContent_" + id), theContent).classes(if (expandedByDefault) "" else Css.hidden)
+  private val contentHolder = div(Some("collapsibleSection_" + id), content).styles(marginBottom("10px"))
 
   def render = contentHolder.render
 
