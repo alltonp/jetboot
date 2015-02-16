@@ -3,7 +3,6 @@ package im.mange.jetboot
 import im.mange.jetboot.html._
 //import jetboot.Id._
 
-//TODO: this should be SimpleElements or HtmlElements or maybe just Html (so we can import Html._)
 object Html {
   //TODO: think about Div and AnonDiv (if no id)
   def div(id: Option[String], content: Renderable*) = Div(id.getOrElse(""), Composite(content:_*))
@@ -12,10 +11,8 @@ object Html {
   def li(content: Renderable*) = Li(Composite(content:_*))
 
   //TODO: think about Span and AnonSpan (if no id)
-  def span(id: String, content: Renderable*) = Span(id, Composite(content:_*))
-  def span(content: Renderable*): Span = span("", Composite(content:_*))
-
-  //TODO: try to lost this version ..
+  def span(id: Option[String], content: Renderable*) = Span(id.getOrElse(""), Composite(content:_*))
+  def span(content: Renderable*): Span = span(None, Composite(content:_*))
   def span(content: String): Span = span(R(content))
 
   def ul(content: Renderable*) = Ul(Composite(content:_*))
