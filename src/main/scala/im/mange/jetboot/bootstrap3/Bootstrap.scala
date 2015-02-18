@@ -33,6 +33,7 @@ object Bootstrap {
   def glyphicon(name: String) = "glyphicon glyphicon-" + name
 
   val helpBlock = "help-block"
+  val hidden = "hidden"
 
   val h1 = "h1"
   val h2 = "h2"
@@ -48,6 +49,8 @@ object Bootstrap {
   val inputGroupSm = "input-group-sm"
   val inputGroupLg = "input-group-lg"
   val inputGroupBtn = "input-group-btn"
+
+  val jumbotron = "jumbotron"
 
   val label = "label"
   val labelDefault = "label-default"
