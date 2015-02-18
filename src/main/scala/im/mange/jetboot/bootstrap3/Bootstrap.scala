@@ -6,7 +6,7 @@ object Bootstrap {
 
   val btn = "btn"
   val btnLg = "btn-lg"
-  val btnSml = "btn-sml"
+  val btnSm = "btn-sm"
   val btnXs = "btn-xs"
   val btnBlock = "btn-block"
   val btnDefault = "btn-default"
