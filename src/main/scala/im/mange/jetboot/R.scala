@@ -3,7 +3,7 @@ package im.mange.jetboot
 import scala.xml.{NodeSeq, Text}
 
 object R {
-  def apply(renderables: Renderable*): Renderable = R(Composite(renderables:_*))
+  def apply(renderables: Renderable*): Renderable = R(Composite(renderables:_*).render)
   def apply(content: String): Renderable = R(Text(content))
   def apply(): Renderable = R(NodeSeq.Empty)
 }
