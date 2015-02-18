@@ -33,7 +33,6 @@ trait StyleKeys {
   def overflow(value: String) = Style("overflow", value)
   def overflowX(value: String) = Style("overflow-x", value)
   def overflowY(value: String) = Style("overflow-y", value)
-  //TODO: add a padding() with the args for the shortcuts and their names
   def paddingTop(value: String) = Style("padding-top", value)
   def paddingRight(value: String) = Style("padding-right", value)
   def paddingBottom(value: String) = Style("padding-bottom", value)
