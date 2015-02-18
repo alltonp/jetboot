@@ -15,8 +15,8 @@ object SimpleTable {
   def headers(tableHeaders: List[TableHeader]) = TableHeaders(tableHeaders)
   def header(r: Renderable) = TableHeader(r)
   def header(s: String) = TableHeader(R(s))
-  def rows(rows: TableRow*) = rows.toList
-  def rows(rows: List[TableRow]) = rows
+  def rows(trows: TableRow*) = trows.toList
+  def rows(trows: List[TableRow]) = trows
   def trow(magnets: RenderableMagnet*): TableRow = TableRow(magnets.map(_.apply()))
   def trow(magnets: List[RenderableMagnet]): TableRow = TableRow(magnets.map(_.apply()))
 }
