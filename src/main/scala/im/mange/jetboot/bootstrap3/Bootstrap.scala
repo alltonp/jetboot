@@ -17,12 +17,45 @@ object Bootstrap {
   val btnDanger = "btn-danger"
   val btnLink = "btn-link"
 
+  val container = "container"
+  val containerFluid = "container-fluid"
+  val colLg6 = "col-lg-6"
+  val colLg12 = "col-lg-12"
+
+  val formControl = "form-control"
+  val formGroup = "form-group"
+  val formGroupSm = "form-group-sm"
+  val formGroupLg = "form-group-lg"
+  val formInline = "form-inline"
+
+  //TODO: should probably be pulled out
+  val glyphicon = "glyphicon"
+  def glyphicon(name: String) = "glyphicon glyphicon-" + name
+
+  val helpBlock = "help-block"
+
   val h1 = "h1"
   val h2 = "h2"
   val h3 = "h3"
   val h4 = "h4"
   val h5 = "h5"
   val h6 = "h6"
+
+  val inputSm = "input-sm"
+  val inputLg = "input-lg"
+  val inputGroupAddon = "input-group-addon"
+  val inputGroup = "input-group"
+  val inputGroupSm = "input-group-sm"
+  val inputGroupLg = "input-group-lg"
+  val inputGroupBtn = "input-group-btn"
+
+  val label = "label"
+  val labelDefault = "label-default"
+  val labelPrimary = "label-primary"
+  val labelSuccess = "label-success"
+  val labelInfo = "label-info"
+  val labelWarning = "label-warning"
+  val labelDanger = "label-danger"
 
   val panel = "panel"
   val panelBody = "panel-body"
@@ -36,8 +69,17 @@ object Bootstrap {
   val panelWarning = "panel-warning"
   val panelDanger = "panel-danger"
 
+  val progress = "progress"
+  val progressBar = "progress-bar"
+  val progressBarSuccess = "progress-bar-success"
+  val progressBarWarning = "progress-bar-warning"
+  val progressBarDanger = "progress-bar-danger"
+  val progressStriped = "progress-striped"
+
   val pullLeft = "pull-left"
   val pullRight = "pull-right"
+
+  val row = "row"
 
   val tableBordered = "table-bordered"
   val tableCondensed = "table-condensed"
@@ -47,44 +89,4 @@ object Bootstrap {
   val textLeft = "text-left"
   val textRight = "text-right"
   val textJustify = "text-justify"
-
-  val container = "container"
-  val containerFluid = "container-fluid"
-  val row = "row"
-  val colLg6 = "col-lg-6"
-  val colLg12 = "col-lg-12"
-
-  //TODO: should probably be pulled out
-  val glyphicon = "glyphicon"
-  def glyphicon(name: String) = "glyphicon glyphicon-" + name
-
-  val formControl = "form-control"
-  val formGroup = "form-group"
-  val formGroupSm = "form-group-sm"
-  val formGroupLg = "form-group-lg"
-
-  val formInline = "form-inline"
-  val inputSm = "input-sm"
-  val inputLg = "input-lg"
-  val inputGroupAddon = "input-group-addon"
-  val inputGroup = "input-group"
-  val inputGroupSm = "input-group-sm"
-  val inputGroupLg = "input-group-lg"
-  val inputGroupBtn = "input-group-btn"
-  val helpBlock = "help-block"
-
-  val label = "label"
-  val labelDefault = "label-default"
-  val labelPrimary = "label-primary"
-  val labelSuccess = "label-success"
-  val labelInfo = "label-info"
-  val labelWarning = "label-warning"
-  val labelDanger = "label-danger"
-
-  val progress = "progress"
-  val progressBar = "progress-bar"
-  val progressBarSuccess = "progress-bar-success"
-  val progressBarWarning = "progress-bar-warning"
-  val progressBarDanger = "progress-bar-danger"
-  val progressStriped = "progress-striped"
 }
