@@ -1,19 +1,17 @@
 package im.mange.jetboot
 
 import im.mange.jetboot.html._
-//import jetboot.Id._
 
 object Html {
-  //TODO: think about Div and AnonDiv (if no id)
   def div(id: Option[String], content: Renderable*) = Div(id.getOrElse(""), Composite(content:_*))
   def div(content: Renderable*): Div = div(None, content:_*)
   def div(content: List[Renderable]): Div = div(None, content:_*)
 
   def li(content: Renderable*) = Li(Composite(content:_*))
 
-  //TODO: think about Span and AnonSpan (if no id)
   def span(id: Option[String], content: Renderable*) = Span(id.getOrElse(""), Composite(content:_*))
   def span(content: Renderable*): Span = span(None, Composite(content:_*))
+  def span(content: List[Renderable]): Span = span(None, Composite(content:_*))
   def span(content: String): Span = span(R(content))
 
   def ul(content: Renderable*) = Ul(Composite(content:_*))
