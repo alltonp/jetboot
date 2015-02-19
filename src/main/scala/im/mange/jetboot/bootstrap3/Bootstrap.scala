@@ -27,6 +27,7 @@ object Bootstrap {
   val formGroupSm = "form-group-sm"
   val formGroupLg = "form-group-lg"
   val formInline = "form-inline"
+  val formHorizontal = "form-horizontal"
 
   //TODO: should probably be pulled out
   val glyphicon = "glyphicon"
