@@ -7,6 +7,7 @@ object Html {
   //TODO: think about Div and AnonDiv (if no id)
   def div(id: Option[String], content: Renderable*) = Div(id.getOrElse(""), Composite(content:_*))
   def div(content: Renderable*): Div = div(None, content:_*)
+  def div(content: List[Renderable]): Div = div(None, content:_*)
 
   def li(content: Renderable*) = Li(Composite(content:_*))
 
