@@ -12,7 +12,7 @@ object Html {
   def span(id: Option[String], content: Renderable*) = Span(id.getOrElse(""), Composite(content:_*))
   def span(content: Renderable*): Span = span(None, Composite(content:_*))
   def span(content: List[Renderable]): Span = span(None, Composite(content:_*))
-  def span(content: String): Span = span(R(content))
+  def span(id: Option[String], content: String): Span = span(id, R(content))
 
   def ul(content: Renderable*) = Ul(Composite(content:_*))
 
