@@ -1,6 +1,6 @@
 package im.mange.jetboot.js
 
-import net.liftweb.http.js.JE.ValById
+import net.liftweb.http.js.JE.{JsRaw, ValById}
 import net.liftweb.http.js.JsCmds.{SetHtml, _}
 import net.liftweb.http.js.jquery.JqJE.{JqAttr, JqGetAttr, JqId, JqPrepend, JqRemove, JqReplace, _}
 import net.liftweb.http.js.{JsCmd, JsExp, JsMember}
@@ -31,7 +31,8 @@ trait JsCmdFactory {
   //  def setElementText(id: String, value: String): JsCmd = JqId(id) ~> JqText(value)
   //  def setElementText(id: String, value: NodeSeq): JsCmd = JqId(id) ~> JqHtml(value) - works
   def setAttributeValue(id: String, attribute: String, value: String): JsCmd = JqId(id) ~> JqAttr(attribute, value)
-  def setElementValue(id: String, value: String): JsCmd = JqId(id) ~> JqAttr("value", value)
+//  def setElementValue(id: String, value: String): JsCmd = JqId(id) ~> JqAttr("value", value)
+  def setElementValue(id: String, value: String): JsCmd = JsRaw("$('#" + id + "').val('" + value + "');")
   def setHrefValue(id: String, value: String): JsCmd = JqId(id) ~> JqAttr("href", value)
   def clearElementValue(id: String): JsCmd = setElementValue(id, "")
   def emptyElement(id: String): JsCmd = JqId(id) ~> JqText("")
