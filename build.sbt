@@ -14,7 +14,7 @@ resolvers ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "net.liftweb" %% "lift-webkit" % "2.6"
+  "net.liftweb" %% "lift-webkit" % "2.6.1"
 )
 
 sonatypeSettings
