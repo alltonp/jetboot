@@ -42,6 +42,7 @@ trait JsCmdFactory {
   //TODO: inspect usages of this to consider putting on Element
   def emptyAndHideElement(id: String): JsCmd = emptyElement(id) & hideElement(id)
   def nothing: JsCmd = Noop
+  def reload: JsCmd = Reload
 }
 
 case class JqAfter(content: NodeSeq) extends JsExp with JsMember {
