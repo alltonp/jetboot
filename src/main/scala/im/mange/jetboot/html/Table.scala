@@ -12,8 +12,8 @@ case class Td(content: Renderable) extends Renderable with Styleable {
   def render = <td class={classes.render} style={styles.render}>{content.render}</td>
 }
 
-case class Tr(content: Renderable) extends Renderable with Styleable {
-  def render = <tr class={classes.render} style={styles.render}>{content.render}</tr>
+case class Tr(id: Option[String] ,content: Renderable) extends Renderable with Styleable {
+  def render = <tr id={id.getOrElse("")} class={classes.render} style={styles.render}>{content.render}</tr>
 }
 
 case class Tbody(content: Renderable) extends Renderable with Styleable {

@@ -19,7 +19,7 @@ object Html {
   def table(thead: Thead, tbody: Tbody) = Table(thead, tbody)
   def thead(content: Renderable*) = Thead(Composite(content:_*))
   def tbody(content: Renderable*) = Tbody(Composite(content:_*))
-  def tr(content: Renderable*) = Tr(Composite(content:_*))
+  def tr(id: Option[String], content: Renderable*) = Tr(id, Composite(content:_*))
   def th(content: Renderable) = Th(content)
   def th(content: String): Th = th(R(content))
   def td(content: Renderable) = Td(content)

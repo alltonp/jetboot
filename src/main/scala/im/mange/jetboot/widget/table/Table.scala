@@ -26,20 +26,20 @@ case class TableHeader(content: Renderable) extends Renderable with Styleable {
   def render = th(content).classes(classes).styles(styles).render
 }
 
-case class TableRow(cells: Seq[Renderable]) extends Styleable
+case class TableRow(id: Option[String],cells: Seq[Renderable]) extends Styleable
 
 case class TableModel(header: TableHeaders, rows: Seq[TableRow])
 
 case class Table(tableModel: TableModel) extends Renderable with Styleable {
   def render = table(
     thead(
-      tr(
+      tr(None,
         tableModel.header.headers:_*
       ).classes(tableModel.header.trClasses).styles(tableModel.header.trStyles)
     ).classes(tableModel.header.theadClasses).styles(tableModel.header.theadStyles),
     tbody(
       tableModel.rows.map(r ⇒ {
-        tr(
+        tr(r.id,
           r.cells.map(td(_)):_*
         ).classes(r.classes).styles(r.styles)
       }):_*
