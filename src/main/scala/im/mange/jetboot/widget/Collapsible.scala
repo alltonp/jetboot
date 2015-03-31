@@ -6,6 +6,7 @@ import net.liftweb.http.SHtml._
 
 //TIP: http://www.plugolabs.com/twitter-bootstrap-button-generator-3/
 //<button class="btn btn-success btn-xs">foo <span class="glyphicon glyphicon-chevron-right"></span></button>
+//TODO: ultimate make a Button and pass it in
 case class Collapsible(id: String, label: String, theContent: Renderable, buttonClasses: Classes, expandedByDefault: Boolean = false) extends Renderable {
   import im.mange.jetboot.Css._
   import im.mange.jetboot.Html._
@@ -25,7 +26,7 @@ case class Collapsible(id: String, label: String, theContent: Renderable, button
 
   private def displayExpander() = {
     R(a(() => toggle(),
-      <button class={s"btn ${buttonClasses.render}" + (if (expanded) " active" else "")} data-toggle="button" style="font-weight:bold" id={link.id}>{icon().render}</button>,
+      <button class={s"btn ${buttonClasses.render}" + (if (expanded) " active" else "")} data-toggle="button" style="font-weight: bold;" id={link.id}>{icon().render}</button>,
       "style" -> "text-decoration: none;"
     ))
   }
