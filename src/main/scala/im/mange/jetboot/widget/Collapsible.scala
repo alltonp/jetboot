@@ -26,7 +26,7 @@ case class Collapsible(id: String, label: String, theContent: Renderable, button
 
   private def displayExpander() = {
     R(a(() => toggle(),
-      <button class={s"btn ${buttonClasses.render}" + (if (expanded) " active" else "")} data-toggle="button" style="font-weight: bold;" id={link.id}>{icon().render}</button>,
+      <button type="button" class={s"btn ${buttonClasses.render}" + (if (expanded) " active" else "")} data-toggle="button" style="font-weight: bold;" id={link.id}>{icon().render}</button>,
       "style" -> "text-decoration: none;"
     ))
   }
