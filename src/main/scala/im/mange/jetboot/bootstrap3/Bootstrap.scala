@@ -19,6 +19,7 @@ object Bootstrap {
 
   val container = "container"
   val containerFluid = "container-fluid"
+  val controlLabel = "control-label"
   val colLg6 = "col-lg-6"
   val colLg12 = "col-lg-12"
 
