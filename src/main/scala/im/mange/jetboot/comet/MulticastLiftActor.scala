@@ -17,6 +17,6 @@ trait MulticastLiftActor extends LiftActor {
   }
 
   def handleMessage: PartialFunction[Any, Unit]
-  def afterSubscribe(s: Subscriber): Unit = { }
-  def afterUnsubscribe(s: Subscriber): Unit = { }
+  def afterSubscribe(s: Subscriber) { }
+  def afterUnsubscribe(s: Subscriber) { }
 }

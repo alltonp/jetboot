@@ -1,11 +1,14 @@
 package im.mange.jetboot.widget
 
 import im.mange.jetboot._
+import im.mange.jetboot.css.Classes
 import net.liftweb.http.SHtml._
 
-case class Collapsible(id: String, label: String, theContent: Renderable, expandedByDefault: Boolean = false) extends Renderable {
-  import Html._
-  import Css._
+//TIP: http://www.plugolabs.com/twitter-bootstrap-button-generator-3/
+//<button class="btn btn-success btn-xs">foo <span class="glyphicon glyphicon-chevron-right"></span></button>
+case class Collapsible(id: String, label: String, theContent: Renderable, buttonClasses: Classes, expandedByDefault: Boolean = false) extends Renderable {
+  import im.mange.jetboot.Css._
+  import im.mange.jetboot.Html._
 
   private var expanded = expandedByDefault
   private val link = Element("collapsibleLink_" + id)
@@ -22,7 +25,7 @@ case class Collapsible(id: String, label: String, theContent: Renderable, expand
 
   private def displayExpander() = {
     R(a(() => toggle(),
-      <button class={"btn btn-block btn-success" + (if (expanded) " active" else "")} data-toggle="button" style="font-weight:bold" id={link.id}>{icon().render}</button>,
+      <button class={s"btn ${buttonClasses.render}" + (if (expanded) " active" else "")} data-toggle="button" style="font-weight:bold" id={link.id}>{icon().render}</button>,
       "style" -> "text-decoration: none;"
     ))
   }
@@ -39,7 +42,7 @@ case class Collapsible(id: String, label: String, theContent: Renderable, expand
 
   private def expand() = collapsibleContent.show & link.fill(closeIcon())
   private def collapse() = collapsibleContent.hide & link.fill(openIcon())
-  private def openIcon() = R(<span>{/*Glyphicons.chevronRight()*/}&nbsp;{label}&nbsp;</span>)
-  private def closeIcon() = R(<span>{/*Glyphicons.chevronDown()*/}&nbsp;{label}&nbsp;</span>)
+  private def openIcon() = R(<span><span class="glyphicon glyphicon-chevron-right">&nbsp;{label}&nbsp;</span></span>)
+  private def closeIcon() = R(<span><span class="glyphicon glyphicon-chevron-down">&nbsp;{label}&nbsp;</span></span>)
   private def icon() = if (expanded) closeIcon() else openIcon()
 }
