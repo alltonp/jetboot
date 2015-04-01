@@ -6,9 +6,9 @@ object Demo extends App {
   val rs = List(
     R(),
     R("x", "y", "z"),
-//    R(List("x", "y", "z")),
+    R(List("x", "y", "z")),
     R(R("x"), R("y"), R("z")),
-//    R(List(R("x"), R("y"), R("z"))),
+    R(List(R("x"), R("y"), R("z"))),
     R(<b></b>, <b></b>, <b></b>),
     R(List(<b></b>, <b></b>, <b></b>))
   )
