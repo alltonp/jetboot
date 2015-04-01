@@ -5,7 +5,7 @@ import scala.xml.{NodeSeq, Text}
 object R {
   def apply(renderables: Renderable*): Renderable = R(Composite(renderables:_*).render)
   def apply(renderables: List[Renderable]): Renderable = R(renderables:_*)
-  def apply(content: String): Renderable = R(Text(content))
+  def apply(content: String*): Renderable = R(content.map(Text(_)))
   def apply(): Renderable = R(NodeSeq.Empty)
 }
 
