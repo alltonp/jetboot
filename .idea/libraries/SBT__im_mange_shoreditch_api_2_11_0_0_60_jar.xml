@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: im.mange:shoreditch-api_2.11:0.0.60:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/im.mange/shoreditch-api_2.11/jars/shoreditch-api_2.11-0.0.60.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.ivy2/cache/im.mange/shoreditch-api_2.11/docs/shoreditch-api_2.11-0.0.60-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/im.mange/shoreditch-api_2.11/srcs/shoreditch-api_2.11-0.0.60-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
