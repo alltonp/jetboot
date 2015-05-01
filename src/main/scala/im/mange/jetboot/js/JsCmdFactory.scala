@@ -1,5 +1,6 @@
 package im.mange.jetboot.js
 
+import im.mange.jetboot.Js
 import net.liftweb.http.js.JE.{JsRaw, ValById}
 import net.liftweb.http.js.JsCmds.{SetHtml, _}
 import net.liftweb.http.js.jquery.JqJE.{JqAttr, JqGetAttr, JqId, JqPrepend, JqRemove, JqReplace, _}
@@ -43,6 +44,7 @@ trait JsCmdFactory {
   def emptyAndHideElement(id: String): JsCmd = emptyElement(id) & hideElement(id)
   def nothing: JsCmd = Noop
   def reload: JsCmd = Reload
+  def chain(jsCmds: Seq[JsCmd]) = jsCmds.foldLeft(Js.nothing){(acc, j) => acc & j}
 }
 
 case class JqAfter(content: NodeSeq) extends JsExp with JsMember {
