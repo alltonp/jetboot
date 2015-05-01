@@ -1,5 +1,6 @@
 package im.mange.jetboot.widget
 
+@deprecated("Use HtmlInput instead", "01/05/2015")
 trait LinkButton extends Button {
   import im.mange.jetboot.Js._
 

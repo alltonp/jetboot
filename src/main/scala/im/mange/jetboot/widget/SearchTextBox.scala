@@ -6,6 +6,7 @@ import net.liftweb.util.Schedule
 
 //TODO: might be nice to have a clear button too (or perhaps that another widget entirely)
 //TODO: this looks like a pretty dodgy name to me ....
+@deprecated("Use HtmlInput instead", "01/05/2015")
 case class SearchTextBox(id: String, doSearch: String ⇒ Unit, default: String = "", placeholder: String = "", delay: Long = 500, onlyUpdateWhenChanged: Boolean = true) extends LiveTextBox {
   private var currentQuery = default
   private val lock = AnyRef
