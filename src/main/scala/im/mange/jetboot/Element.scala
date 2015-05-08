@@ -12,8 +12,9 @@ case class Element(id: String) {
   def disable = disableElement(id)
   def enable = enableElement(id)
   def empty = emptyElement(id)
-  //TODO: think about a Fillable trait
+  def emptyAndHide = emptyAndHideElement(id)
   def fill(value: Renderable) = fillElement(id, value.render)
+  def fillAndShow(value: Renderable) = fillAndShowElement(id, value.render)
   def focus = focusElement(id)
   def getValue = getElementValue(id)
   def getText = getElementText(id)

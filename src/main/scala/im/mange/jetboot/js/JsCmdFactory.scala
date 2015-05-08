@@ -37,11 +37,9 @@ trait JsCmdFactory {
   def setHrefValue(id: String, value: String): JsCmd = JqId(id) ~> JqAttr("href", value)
   def clearElementValue(id: String): JsCmd = setElementValue(id, "")
   def emptyElement(id: String): JsCmd = JqId(id) ~> JqText("")
-  def fillElement(id: String, content: NodeSeq): JsCmd = SetHtml(id, content)
-  //TODO: inspect usages of this to consider putting on Element
-  def fillAndShowElement(id: String, content: NodeSeq): JsCmd = fillElement(id, content) & showElement(id)
-  //TODO: inspect usages of this to consider putting on Element
   def emptyAndHideElement(id: String): JsCmd = emptyElement(id) & hideElement(id)
+  def fillElement(id: String, content: NodeSeq): JsCmd = SetHtml(id, content)
+  def fillAndShowElement(id: String, content: NodeSeq): JsCmd = fillElement(id, content) & showElement(id)
   def nothing: JsCmd = Noop
   def reload: JsCmd = Reload
   def chain(jsCmds: Seq[JsCmd]) = jsCmds.foldLeft(Js.nothing){(acc, j) => acc & j}
