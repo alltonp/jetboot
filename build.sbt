@@ -14,6 +14,11 @@ resolvers ++= Seq(
 )
 
 //TODO: make this a dep that is needs version > x but doesnt bring in by default .. just need to cast the right sbt runes
+//"provided" lookes like it might be it
+//see: https://github.com/sbt/sbt-assembly
+//and "run in Compile <<= Defaults.runTask(fullClasspath in Compile, mainClass in (Compile, run), runner in (Compile, run))"
+//also, use with version ranges .. 1.0.+ or [1.0,2.0]
+//see: https://www.safaribooksonline.com/library/view/scala-cookbook/9781449340292/ch18s06.html
 libraryDependencies ++= Seq(
   "net.liftweb" %% "lift-webkit" % "2.6.1",
   "im.mange" %% "little" % "0.0.7"
