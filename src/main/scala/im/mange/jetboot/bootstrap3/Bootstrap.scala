@@ -1,5 +1,6 @@
 package im.mange.jetboot.bootstrap3
 
+//TODO: should this be called BootstrapStyles instead
 object Bootstrap {
   val alert = "alert"
   val alertDanger = "alert-danger"
