@@ -7,7 +7,6 @@ import net.liftweb.http.SHtml._
 //TIP: http://www.plugolabs.com/twitter-bootstrap-button-generator-3/
 //<button class="btn btn-success btn-xs">foo <span class="glyphicon glyphicon-chevron-right"></span></button>
 //TODO: ultimate make a Button and pass it in
-//TODO: this looks like it should be in the widget package
 case class Collapsible(id: String, label: String, theContent: Renderable, buttonClasses: Classes, expandedByDefault: Boolean = false) extends Renderable {
   import im.mange.jetboot.Html._
 

@@ -48,6 +48,7 @@ object HtmlInput {
   def decimalBox(name: String, default: BigDecimal = BigDecimal(0)) = DecimalBox(Field(name), default)
 }
 
+//TODO: lose me
 object TupleMadness {
   def toTuple[T](t: T): (T,T) = t -> t
 }
