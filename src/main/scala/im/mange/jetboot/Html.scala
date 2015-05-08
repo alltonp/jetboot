@@ -5,12 +5,14 @@ import im.mange.jetboot.html._
 object Html {
   def div(id: Option[String], content: Renderable*) = Div(id.getOrElse(""), Composite(content:_*))
   def div(content: Renderable*): Div = div(None, content:_*)
+  //TODO: make Seq
   def div(content: List[Renderable]): Div = div(None, content:_*)
 
   def li(content: Renderable*) = Li(Composite(content:_*))
 
   def span(id: Option[String], content: Renderable*) = Span(id.getOrElse(""), Composite(content:_*))
   def span(content: Renderable*): Span = span(None, Composite(content:_*))
+  //TODO: make Seq
   def span(content: List[Renderable]): Span = span(None, Composite(content:_*))
   def span(id: Option[String], content: String): Span = span(id, R(content))
 
@@ -26,6 +28,4 @@ object Html {
   def td(content: String): Td = td(R(content))
 
   def pre(content: String) = Pre(R(content))
-
-  //TODO: actually widgets should always be Identifiable ... otherwise they are a Renderable
 }
