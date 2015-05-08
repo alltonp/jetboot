@@ -8,13 +8,12 @@ import net.liftweb.http.SHtml._
 //<button class="btn btn-success btn-xs">foo <span class="glyphicon glyphicon-chevron-right"></span></button>
 //TODO: ultimate make a Button and pass it in
 case class Collapsible(id: String, label: String, theContent: Renderable, buttonClasses: Classes, expandedByDefault: Boolean = false) extends Renderable {
-  import im.mange.jetboot.Css._
   import im.mange.jetboot.Html._
 
   private var expanded = expandedByDefault
   private val link = Element("collapsibleLink_" + id)
   private val collapsibleContent = div(Some("collapsibleContent_" + id), theContent).classes(if (expandedByDefault) "" else Css.hidden)
-  private val contentHolder = div(Some("collapsibleSection_" + id), content).styles(marginBottom("10px"))
+  private val contentHolder = div(Some("collapsibleSection_" + id), content)//.styles(marginBottom("10px"))
 
   def render = contentHolder.render
 
