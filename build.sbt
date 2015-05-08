@@ -15,7 +15,8 @@ resolvers ++= Seq(
 
 //TODO: make this a dep that is needs version > x but doesnt bring in by default .. just need to cast the right sbt runes
 libraryDependencies ++= Seq(
-  "net.liftweb" %% "lift-webkit" % "2.6.1"
+  "net.liftweb" %% "lift-webkit" % "2.6.1",
+  "im.mange" %% "little" % "0.0.7"
 )
 
 sonatypeSettings
