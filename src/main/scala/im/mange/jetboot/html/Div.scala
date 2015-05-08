@@ -9,7 +9,7 @@ import im.mange.jetboot._
 //TODO: maybe have a LayoutFactory to match
 
 //Hmm ... id should be an Option ... things that depend on id e.g. Fillable etc should do Js.nothing on a None
-case class Div(id: String, content: Renderable) extends Hideable with Fillable with Styleable with HtmlElement {
+case class Div(id: String, content: Renderable) extends Hideable with Fillable with HideableAndFillable with Styleable with HtmlElement {
   def render = <div id={id} class={classes.render} style={styles.render} title={title}>{content.render}</div>
 }
 
