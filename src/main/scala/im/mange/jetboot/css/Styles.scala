@@ -15,6 +15,7 @@ object Styles {
 //e.g. Css._
 
 trait StyleKeys {
+  def backgroundColor(value: String) = Style("background-color", value)
   def border(value: String*) = Style("border", value.mkString(" "))
   def color(value: String) = Style("color", value)
   def clear(value: String) = Style("clear", value)
@@ -45,7 +46,7 @@ trait StyleKeys {
   def textDecoration(value: String) = Style("text-decoration", value)
   def width(value: String) = Style("width", value)
   def whiteSpace(value: String) = Style("white-space", value)
-  def backgroundColor(value: String) = Style("background-color", value)
+  def verticalAlign(value: String) = Style("vertical-align", value)
 }
 
 trait StyleValues {
@@ -61,6 +62,7 @@ trait StyleValues {
   val larger = "larger"
   val left = "left"
   val medium = "medium"
+  val middle = "middle"
   val none = "none"
   val nowrap = "nowrap"
   val right = "right"
