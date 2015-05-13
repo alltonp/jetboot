@@ -24,6 +24,8 @@ libraryDependencies ++= Seq(
   "im.mange" %% "little" % "[0.0.7,0.1.0]" % "provided"
 )
 
+net.virtualvoid.sbt.graph.Plugin.graphSettings
+
 sonatypeSettings
 
 publishTo <<= version { project_version ⇒
