@@ -20,8 +20,8 @@ resolvers ++= Seq(
 //also, use with version ranges .. 1.0.+ or [1.0,2.0]
 //see: https://www.safaribooksonline.com/library/view/scala-cookbook/9781449340292/ch18s06.html
 libraryDependencies ++= Seq(
-  "net.liftweb" %% "lift-webkit" % "[2.6.1,2.7.0]" % "system",
-  "im.mange" %% "little" % "0.0.7"
+  "net.liftweb" %% "lift-webkit" % "[2.6.1,2.7.0]" % "provided",
+  "im.mange" %% "little" % "[0.0.7,0.1.0]" % "provided"
 )
 
 sonatypeSettings
