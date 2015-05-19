@@ -19,5 +19,5 @@ case class Select(field: Field, options: Seq[(String,String)], placeholder: Stri
 
   def onChange(handler: (String) => JsCmd) = addEvents(Event.onChange -> handler)
 
-  override def clear = defaultValue.fold(Js.clearElementValue(id))(Js.setElementValue(id, _))
+  override def reset = Js.setElementValue(id, safeDefault)
 }

@@ -17,7 +17,7 @@ class MaskedBox(val field: Field, default: String, readOnly: Boolean = false, ma
 
   def onKeyUp (handler: String ⇒ JsCmd): this.type = addEvents(Event.onKeyUp -> handler)
 
-  override def clear = super.clear & Js.setElementValue(id, default)
+  override def reset = Js.setElementValue(id, default)
 
   //TODO: need to override init with the JS inputmask init stuff
 }

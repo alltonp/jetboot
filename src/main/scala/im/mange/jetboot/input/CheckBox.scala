@@ -1,5 +1,6 @@
 package im.mange.jetboot.input
 
+import im.mange.jetboot.Js
 import im.mange.jetboot.widget.form.FormInput
 import net.liftweb.http.SHtml
 
@@ -12,4 +13,6 @@ case class CheckBox(field: Field, default: Boolean) extends FormInput {
 
   //TODO: there should probably be a default on FormInput which should be rarely overriden (like here only so far)
   private def onSubmit(value: Boolean) { this.value = value }
+
+  override def reset = Js.setAttributeValue(id, "checked", default.toString)
 }

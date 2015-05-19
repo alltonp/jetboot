@@ -3,6 +3,7 @@ package im.mange.jetboot.widget.form
 import im.mange.jetboot._
 import im.mange.jetboot.event.EventHandling
 import im.mange.jetboot.input._
+import net.liftweb.http.js.JsCmd
 
 trait FormInput extends Input with Styleable with EventHandling with Initialisable with Clearable with Updatable {
   val field: Field
@@ -10,13 +11,15 @@ trait FormInput extends Input with Styleable with EventHandling with Initialisab
   def value: Any
   def init = Js.nothing
   def clear = Js.clearElementValue(id)
+  def reset: JsCmd
 }
 
 //TODO: this is starting to look more like a field set kind of thing
-case class Form(id: String, private val inputs: Seq[FormInput]) extends Initialisable with Disableable with Focusable with Hideable with Clearable {
+case class Form(id: String, private val inputs: Seq[FormInput]) extends Initialisable with Disableable with Focusable with Hideable with Clearable with Resettable {
   def data = FormData(inputs.map(i => i.field.unContextualisedId -> i.value).toMap)
 
   override def clear = Js.chain(inputs.map(_.clear))
+  override def reset = Js.chain(inputs.map(_.reset))
   override def init = Js.chain(inputs.map(_.init))
   override def focus = inputs.headOption.fold(Js.nothing)(_.focus)
   override def disable = Js.chain(inputs.map(_.disable))

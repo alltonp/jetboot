@@ -31,7 +31,7 @@ case class DatePicker(field: Field, default: Option[LocalDate], allowWeekends: B
 
   private def onSubmit(value: String) { this.value = value }
 
-  override def clear = super.clear & Js.setElementValue(id, defaultStr)
+  override def reset = Js.setElementValue(id, defaultStr)
 
   //TODO: need to override init with the JS datetimepicker init stuff
 }

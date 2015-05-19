@@ -1,6 +1,6 @@
 package im.mange.jetboot.input
 
-import im.mange.jetboot.Event
+import im.mange.jetboot.{Js, Event}
 import im.mange.jetboot.widget.form.FormInput
 import net.liftweb.http.js.JsCmd
 import net.liftweb.http.SHtml
@@ -15,4 +15,6 @@ case class LiveTextBox(field: Field, placeholder: String, default: String) exten
   private def onSubmit(value: String) { this.value = value }
 
   def onKeyUp(handler: String => JsCmd) = addEvents(Event.onKeyUp -> handler)
+
+  override def reset = Js.setElementValue(id, default)
 }

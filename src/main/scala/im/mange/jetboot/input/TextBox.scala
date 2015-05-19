@@ -18,5 +18,5 @@ case class TextBox(field: Field, placeholder: Option[String], default: Option[St
   def onChange(handler: String => JsCmd): this.type = addEvents(Event.onChange -> handler)
   def onKeyUp(handler: String => JsCmd): this.type = addEvents(Event.onKeyUp -> handler)
 
-  override def clear = super.clear & Js.setElementValue(id, value)
+  override def reset = Js.setElementValue(id, safeDefault)
 }
