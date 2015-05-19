@@ -14,5 +14,5 @@ case class CheckBox(field: Field, default: Boolean) extends FormInput {
   //TODO: there should probably be a default on FormInput which should be rarely overriden (like here only so far)
   private def onSubmit(value: Boolean) { this.value = value }
 
-  override def reset = Js.setAttributeValue(id, "checked", default.toString)
+  override def reset = if (default) Js.setAttributeValue(id, "checked", "checked") else Js.removeElementAttribute(id, "checked")
 }

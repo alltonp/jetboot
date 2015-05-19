@@ -22,6 +22,7 @@ trait JsCmdFactory {
   def removeElement(id: String): JsCmd = JqId(id) ~> JqRemove()
   def removeAllElements(cssClass: String): JsCmd = JqClass(cssClass) ~> JqRemove()
   def removeElementClass(id: String, attr: String): JsCmd = JqId(id) ~> JqRemoveClass(attr)
+  def removeElementAttribute(id: String, attr: String): JsCmd = JqId(id) ~> JqRemoveAttr(attr)
   def addElementClass(id: String, className: String): JsCmd = JqId(id) ~> JqAddClass(className)
   def insertAfter(id: String, content: NodeSeq): JsCmd = JqId(id) ~> JqAfter(content)
   def prependElement(id: String, content: NodeSeq): JsCmd = JqId(id) ~> JqPrepend(content)
@@ -72,3 +73,8 @@ case class JqRemoveClass(c: String) extends JsExp with JsMember {
 case class JqAddClass(c: String) extends JsExp with JsMember {
   override val toJsCmd = "addClass('" + c + "')"
 }
+
+case class JqRemoveAttr(c: String) extends JsExp with JsMember {
+  override val toJsCmd = "removeAttr('" + c + "')"
+}
+
