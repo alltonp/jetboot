@@ -11,9 +11,6 @@ object Styles {
   def apply(styles: List[Style]): Styles = Styles(styles:_*)
 }
 
-//TODO: we need a nice way to import all of these on one static
-//e.g. Css._
-
 trait StyleKeys {
   def backgroundColor(value: String) = Style("background-color", value)
   def border(value: String*) = Style("border", value.mkString(" "))
@@ -25,7 +22,9 @@ trait StyleKeys {
   def float(value: String) = Style("float", value)
   def height(value: String) = Style("height", value)
   def minHeight(value: String) = Style("min-height", value)
+  def minWidth(value: String) = Style("min-width", value)
   def maxHeight(value: String) = Style("max-height", value)
+  def maxWidth(value: String) = Style("max-width", value)
   def margin(value: String) = Style("margin", value)
   def marginTop(value: String) = Style("margin-top", value)
   def marginRight(value: String) = Style("margin-right", value)
