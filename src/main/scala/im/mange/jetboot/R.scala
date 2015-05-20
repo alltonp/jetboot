@@ -5,7 +5,7 @@ import scala.xml.{NodeSeq, Text}
 object R {
   //TIP: http://spray.io/blog/2012-12-13-the-magnet-pattern/
   sealed trait RenderableMagnet { def apply(): Renderable }
-  implicit def fromString(s: String) = new RenderableMagnet { def apply() = R(Text(s)) }
+  implicit def fromString(s: String) = new RenderableMagnet { def apply() = R(Text(if (s == null) "" else s)) }
   implicit def fromStrings(ss: List[String]) = new RenderableMagnet { def apply() = R(Text(ss.mkString)) }
   implicit def fromRenderable(r: Renderable) = new RenderableMagnet { def apply() = r }
   implicit def fromRenderables(r: List[Renderable]) = new RenderableMagnet { def apply() = Composite(r:_*) }
