@@ -9,9 +9,15 @@ import net.liftweb.http.js.JsCmd
 class MaskedBox(val field: Field, default: String, readOnly: Boolean = false, mask: String) extends FormInput {
   var value = default
 
-  def baseElement = SHtml.text(default, onSubmit, "id" → id, "style" → styles.render, "class" → classes.render,
-    "data-inputmask" → mask, if (readOnly) "disabled" → s"$readOnly" else "id" → id
-  )
+  private def js = s"""$$(function () {
+     |$$('#$id').inputmask();
+     |});""".stripMargin
+
+
+  def baseElement = <div>{SHtml.text(default, onSubmit, "id" → id, "style" → styles.render, "class" → classes.render,
+    "data-inputmask" → mask, if (readOnly) "disabled" → s"$readOnly" else "id" → id)}
+    <script type="text/javascript">{js}</script>
+    </div>
 
   private def onSubmit(value: String) { this.value = value }
 
