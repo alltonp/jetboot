@@ -13,7 +13,6 @@ class MaskedBox(val field: Field, default: String, readOnly: Boolean = false, ma
      |$$('#$id').inputmask();
      |});""".stripMargin
 
-
   def baseElement = <div>{SHtml.text(default, onSubmit, "id" → id, "style" → styles.render, "class" → classes.render,
     "data-inputmask" → mask, if (readOnly) "disabled" → s"$readOnly" else "id" → id)}
     <script type="text/javascript">{js}</script>
