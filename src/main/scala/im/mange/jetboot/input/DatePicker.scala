@@ -1,8 +1,9 @@
 package im.mange.jetboot.input
 
-import im.mange.jetboot.Js
+import im.mange.jetboot.{Event, Js}
 import im.mange.jetboot.widget.form.FormInput
 import net.liftweb.http.SHtml
+import net.liftweb.http.js.JsCmd
 import org.joda.time.LocalDate
 
 //TIP: this depends on https://eonasdan.github.io/bootstrap-datetimepicker/
@@ -30,6 +31,8 @@ case class DatePicker(field: Field, default: Option[LocalDate], allowWeekends: B
   </div>
 
   private def onSubmit(value: String) { this.value = value }
+
+  def onChange(handler: (String) => JsCmd) = addEvents(Event.onChange -> handler)
 
   override def reset = Js.setElementValue(id, defaultStr)
 
