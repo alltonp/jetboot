@@ -20,10 +20,13 @@ case class DatePicker(field: Field, default: Option[LocalDate], allowWeekends: B
 
 //  |     $$('#$id').change();
 
+  //TIP: https://github.com/Eonasdan/bootstrap-datetimepicker/issues/983
   private def js = s"""$$(function () {
-      |$$('#$widgetId').datetimepicker({${options.mkString(",")}}).on('change', function (ev) {
-      |   alert('changed');
-      |   });
+      |$$('#$widgetId').datetimepicker({${options.mkString(",")}})
+      |.on('dp.hide',function (e) {
+      |alert('hidden');
+      |$$(e.target).trigger('change');
+      |});
       |});""".stripMargin
 
   //TIP: this font-size 7px is a nasty layout hack to support input-xs
