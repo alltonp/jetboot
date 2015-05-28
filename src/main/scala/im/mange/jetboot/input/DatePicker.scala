@@ -11,7 +11,7 @@ import net.liftweb.http.js.{JsCmd, JsExp}
 import net.liftweb.util.Helpers._
 
 //TIP: this depends on https://eonasdan.github.io/bootstrap-datetimepicker/
-case class DatePicker(field: Field, default: Option[LocalDate], allowWeekends: Boolean, readonly: Boolean) extends FormInput {
+case class DatePicker(field: Field, default: Option[LocalDate], allowWeekends: Boolean = true) extends FormInput {
   private val defaultStr = default.map(_.toString("dd/MM/yyyy")).getOrElse("")
   var value = defaultStr
   private def widgetId = s"datepicker-$id"
@@ -40,7 +40,7 @@ case class DatePicker(field: Field, default: Option[LocalDate], allowWeekends: B
   </div>
 
   def baseElement = {
-    SHtml.text(defaultStr, onSubmit, "id" → id, "style" → styles.render, "class" → classes.render, "readonly" → readonly.toString)
+    SHtml.text(defaultStr, onSubmit, "id" → id, "style" → styles.render, "class" → classes.render)
   }
 
   private def onSubmit(value: String) { this.value = value }
