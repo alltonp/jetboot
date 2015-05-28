@@ -35,8 +35,8 @@ object HtmlInput {
   def textBox(name: String, placeholder: Option[String] = None, default: Option[String] = None) = 
     TextBox(Field(name), placeholder, default)
 
-  def datePicker(name: String, default: Option[LocalDate] = None, allowWeekends: Boolean = true, readonly: Boolean = false) =
-    DatePicker(Field(name), default, allowWeekends, readonly)
+  def datePicker(name: String, default: Option[LocalDate] = None, allowWeekends: Boolean = true) =
+    DatePicker(Field(name), default, allowWeekends)
 
   //TODO: make default an Option
   def integerBox(name: String) = IntegerBox(Field(name))
