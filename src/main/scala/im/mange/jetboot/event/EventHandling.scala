@@ -16,6 +16,9 @@ trait EventHandling {
   def addEvents(handlers: (String, (String) => JsCmd)*): this.type =
   { eventHandlers ++= handlers.map { case (eventType, handler) => EventHandler(eventType, handler)}; this }
 
+  def attachHandlersToBase(base: Elem) = eventHandlers.foldLeft(base)((acc, handler) => acc % handler.toAjax)
+
+  //TODO: this needs to die too
   def baseElement: Elem
 }
 

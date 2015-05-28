@@ -14,19 +14,12 @@ import net.liftweb.util.Helpers._
 class MaskedBox(val field: Field, default: String, readOnly: Boolean = false, mask: String) extends FormInput {
   var value = default
 
-//  private def js = s"""$$(function () {
-//     |$$('#$id').inputmask();
-//     |});""".stripMargin
-
-//  $(document).ready(function () {{
-//    $(":input[data-inputmask]").inputmask();
-//  }});
-
   private def js = s"""$$(document).ready(function () {{
      |$$('#$id').inputmask();
      |}});""".stripMargin
 
-  override def render = <div>{eventHandlers.foldLeft(baseElement)((acc, handler) => acc % handler.toAjax)}
+  //TODO: make a method on the EventHandlers to do the handler bit
+  override def render = <div>{attachHandlersToBase(baseElement)}
     <script type="text/javascript">{js}</script>
     </div>
 

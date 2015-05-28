@@ -33,7 +33,7 @@ case class DatePicker(field: Field, default: Option[LocalDate], allowWeekends: B
   //TODO: this is all a bit nasty, it's because EventHandlers is broken
   override def render = <div>
     <div class='input-group date' id={widgetId}>
-      {eventHandlers.foldLeft(baseElement)((acc, handler) => acc % handler.toAjax)}
+      {attachHandlersToBase(baseElement)}
       <span class="input-group-addon" style="font-size: 7px;">
         <span class="glyphicon glyphicon-calendar"/>
       </span>
