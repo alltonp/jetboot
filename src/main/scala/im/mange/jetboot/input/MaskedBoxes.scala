@@ -1,9 +1,14 @@
 package im.mange.jetboot.input
 
-import im.mange.jetboot.widget.form.FormInput
 import im.mange.jetboot.{Event, Js}
+import im.mange.jetboot.widget.form.FormInput
 import net.liftweb.http.SHtml
 import net.liftweb.http.js.JsCmd
+import org.joda.time.LocalDate
+import net.liftweb.http.SHtml
+import net.liftweb.http.js.JE.JsRaw
+import net.liftweb.http.js.{JsCmd, JsExp}
+import net.liftweb.util.Helpers._
 
 //TIP: this depends on - https://github.com/RobinHerbots/jquery.inputmask (>= 3.1.62)
 class MaskedBox(val field: Field, default: String, readOnly: Boolean = false, mask: String) extends FormInput {
@@ -21,10 +26,12 @@ class MaskedBox(val field: Field, default: String, readOnly: Boolean = false, ma
      |$$('#$id').inputmask();
      |}});""".stripMargin
 
-  def baseElement = <div>{SHtml.text(default, onSubmit, "id" → id, "style" → styles.render, "class" → classes.render,
-    "data-inputmask" → mask, if (readOnly) "disabled" → s"$readOnly" else "id" → id)}
+  override def render = <div>{eventHandlers.foldLeft(baseElement)((acc, handler) => acc % handler.toAjax)}
     <script type="text/javascript">{js}</script>
     </div>
+
+  def baseElement = SHtml.text(default, onSubmit, "id" → id, "style" → styles.render, "class" → classes.render,
+    "data-inputmask" → mask, if (readOnly) "disabled" → s"$readOnly" else "id" → id)
 
   private def onSubmit(value: String) { this.value = value }
 
