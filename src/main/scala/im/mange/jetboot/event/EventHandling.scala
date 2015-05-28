@@ -9,7 +9,8 @@ import scala.xml.Elem
 
 trait EventHandling {
   protected var eventHandlers: Seq[EventHandler] = Nil
-  
+
+  //TODO: this needs to die
   def render = eventHandlers.foldLeft(baseElement)((acc, handler) => acc % handler.toAjax)
 
   def addEvents(handlers: (String, (String) => JsCmd)*): this.type =

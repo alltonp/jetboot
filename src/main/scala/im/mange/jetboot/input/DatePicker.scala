@@ -5,6 +5,10 @@ import im.mange.jetboot.widget.form.FormInput
 import net.liftweb.http.SHtml
 import net.liftweb.http.js.JsCmd
 import org.joda.time.LocalDate
+import net.liftweb.http.SHtml
+import net.liftweb.http.js.JE.JsRaw
+import net.liftweb.http.js.{JsCmd, JsExp}
+import net.liftweb.util.Helpers._
 
 //TIP: this depends on https://eonasdan.github.io/bootstrap-datetimepicker/
 case class DatePicker(field: Field, default: Option[LocalDate], allowWeekends: Boolean = true) extends FormInput {
@@ -20,15 +24,20 @@ case class DatePicker(field: Field, default: Option[LocalDate], allowWeekends: B
 
   //TIP: this font-size 7px is a nasty layout hack to support input-xs
   //TODO: remove the script and override init instead ....
-  def baseElement = <div>
+  //TODO: this is all a bit nasty, it's because EventHandlers is broken
+  override def render = <div>
     <div class='input-group date' id={widgetId}>
-      {SHtml.text(defaultStr, onSubmit, "id" → id, "style" → styles.render, "class" → classes.render)}
+      {eventHandlers.foldLeft(baseElement)((acc, handler) => acc % handler.toAjax)}
       <span class="input-group-addon" style="font-size: 7px;">
         <span class="glyphicon glyphicon-calendar"/>
       </span>
     </div>
     <script type="text/javascript">{js}</script>
   </div>
+
+  def baseElement = {
+    SHtml.text(defaultStr, onSubmit, "id" → id, "style" → styles.render, "class" → classes.render)
+  }
 
   private def onSubmit(value: String) { this.value = value }
 
