@@ -18,9 +18,11 @@ case class DatePicker(field: Field, default: Option[LocalDate], allowWeekends: B
   private val daysOfWeekDisabled = if (allowWeekends) "" -> "" else "daysOfWeekDisabled" -> "[0,6]"
   private val options = Seq("format" -> "\"DD/MM/YYYY\"", "showTodayButton" -> "false", daysOfWeekDisabled).map(x => s"${x._1}:${x._2}")
 
+//  |     $$('#$id').change();
+
   private def js = s"""$$(function () {
-      |$$('#$widgetId').datetimepicker({${options.mkString(",")}}).on('changeDate', function (ev) {
-      |     $$('#$id').change();
+      |$$('#$widgetId').datetimepicker({${options.mkString(",")}}).on('change', function (ev) {
+      |   alert('changed');
       |   });
       |});""".stripMargin
 
