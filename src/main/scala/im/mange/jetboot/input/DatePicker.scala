@@ -11,14 +11,12 @@ import net.liftweb.http.js.{JsCmd, JsExp}
 import net.liftweb.util.Helpers._
 
 //TIP: this depends on https://eonasdan.github.io/bootstrap-datetimepicker/
-case class DatePicker(field: Field, default: Option[LocalDate], allowWeekends: Boolean = true) extends FormInput {
+case class DatePicker(field: Field, default: Option[LocalDate], allowWeekends: Boolean, readonly: Boolean) extends FormInput {
   private val defaultStr = default.map(_.toString("dd/MM/yyyy")).getOrElse("")
   var value = defaultStr
   private def widgetId = s"datepicker-$id"
   private val daysOfWeekDisabled = if (allowWeekends) "" -> "" else "daysOfWeekDisabled" -> "[0,6]"
   private val options = Seq("format" -> "\"DD/MM/YYYY\"", "showTodayButton" -> "false", daysOfWeekDisabled).map(x => s"${x._1}:${x._2}")
-
-//  |     $$('#$id').change();
 
   //TIP: https://github.com/Eonasdan/bootstrap-datetimepicker/issues/983
   private def js = s"""$$(function () {
@@ -42,7 +40,7 @@ case class DatePicker(field: Field, default: Option[LocalDate], allowWeekends: B
   </div>
 
   def baseElement = {
-    SHtml.text(defaultStr, onSubmit, "id" → id, "style" → styles.render, "class" → classes.render)
+    SHtml.text(defaultStr, onSubmit, "id" → id, "style" → styles.render, "class" → classes.render, "readonly" → readonly.toString)
   }
 
   private def onSubmit(value: String) { this.value = value }
@@ -50,6 +48,4 @@ case class DatePicker(field: Field, default: Option[LocalDate], allowWeekends: B
   def onChange(handler: (String) => JsCmd) = addEvents(Event.onChange -> handler)
 
   override def reset = Js.setElementValue(id, defaultStr)
-
-  //TODO: need to override init with the JS datetimepicker init stuff
 }
