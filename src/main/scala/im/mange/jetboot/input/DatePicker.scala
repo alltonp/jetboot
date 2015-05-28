@@ -18,7 +18,7 @@ case class DatePicker(field: Field, default: Option[LocalDate], allowWeekends: B
   private val daysOfWeekDisabled = if (allowWeekends) "" -> "" else "daysOfWeekDisabled" -> "[0,6]"
   private val options = Seq("format" -> "\"DD/MM/YYYY\"", "showTodayButton" -> "false", daysOfWeekDisabled).map(x => s"${x._1}:${x._2}")
 
-  //TIP: https://github.com/Eonasdan/bootstrap-datetimepicker/issues/983
+  //TIP: we have to simulate onchange - https://github.com/Eonasdan/bootstrap-datetimepicker/issues/983
   private def js = s"""$$(function () {
       |$$('#$widgetId').datetimepicker({${options.mkString(",")}})
       |.on('dp.hide',function (e) {
@@ -27,7 +27,6 @@ case class DatePicker(field: Field, default: Option[LocalDate], allowWeekends: B
       |});""".stripMargin
 
   //TIP: this font-size 7px is a nasty layout hack to support input-xs
-  //TODO: remove the script and override init instead ....
   //TODO: this is all a bit nasty, it's because EventHandlers is broken
   override def render = <div>
     <div class='input-group date' id={widgetId}>
