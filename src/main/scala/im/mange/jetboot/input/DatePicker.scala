@@ -19,7 +19,9 @@ case class DatePicker(field: Field, default: Option[LocalDate], allowWeekends: B
   private val options = Seq("format" -> "\"DD/MM/YYYY\"", "showTodayButton" -> "false", daysOfWeekDisabled).map(x => s"${x._1}:${x._2}")
 
   private def js = s"""$$(function () {
-      |$$('#$widgetId').datetimepicker({${options.mkString(",")}});
+      |$$('#$widgetId').datetimepicker({${options.mkString(",")}}).on('changeDate', function (ev) {
+      |     $$('#$id').change();
+      |   });
       |});""".stripMargin
 
   //TIP: this font-size 7px is a nasty layout hack to support input-xs
