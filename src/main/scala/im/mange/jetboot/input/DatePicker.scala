@@ -24,8 +24,9 @@ case class DatePicker(field: Field, default: Option[LocalDate], allowWeekends: B
   private def js = s"""$$(function () {
       |$$('#$widgetId').datetimepicker({${options.mkString(",")}})
       |.on('dp.hide',function (e) {
-      |alert('hidden');
-      |$$(e.target).trigger('change');
+      |alert('before');
+      |$$(#$id).trigger('change');
+      |alert('after');
       |});
       |});""".stripMargin
 
