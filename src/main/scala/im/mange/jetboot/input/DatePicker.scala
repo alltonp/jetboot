@@ -46,6 +46,7 @@ case class DatePicker(field: Field, default: Option[LocalDate], allowWeekends: B
   private def onSubmit(value: String) { this.value = value }
 
   def onChange(handler: (String) => JsCmd) = addEvents(Event.onChange -> handler)
+  def onKeyUp(handler: (String) => JsCmd) = addEvents(Event.onKeyUp -> handler)
 
   override def reset = Js.setElementValue(id, defaultStr)
 }
