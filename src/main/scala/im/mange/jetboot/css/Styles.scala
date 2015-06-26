@@ -41,20 +41,24 @@ trait StyleKeys {
   def padding(top: String, rightAndLeft: String, bottom: String) = Style("padding", List(top, rightAndLeft, bottom).mkString(" "))
   def padding(topAndBottom: String, rightAndLeft: String) = Style("padding", List(topAndBottom, rightAndLeft).mkString(" "))
   def padding(value: String) = Style("padding", value)
+  def position(value: String) = Style("position", value)
   def textAlign(value: String) = Style("text-align", value)
   def textDecoration(value: String) = Style("text-decoration", value)
+  def textOverflow(value: String) = Style("text-overflow", value)
   def width(value: String) = Style("width", value)
   def whiteSpace(value: String) = Style("white-space", value)
   def verticalAlign(value: String) = Style("vertical-align", value)
 }
 
 trait StyleValues {
+  val absolute = "absolute"
   val auto = "auto"
   val bigger = "bigger"
   val block = "block"
   val bold = "bold"
   val both = "both"
   val center = "center"
+  val ellipsis = "ellipsis"
   val hidden = "hidden"
   val inlineBlock = "inline-block"
   val large = "large"
