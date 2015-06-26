@@ -2,6 +2,8 @@ package im.mange.jetboot.bootstrap3
 
 //TODO: should this be called BootstrapStyles instead?
 object Bootstrap {
+  val active = "active"
+
   val alert = "alert"
   val alertDanger = "alert-danger"
 
@@ -24,6 +26,8 @@ object Bootstrap {
   val colLg6 = "col-lg-6"
   val colLg12 = "col-lg-12"
 
+  val fade = "fade"
+
   val formControl = "form-control"
   val formGroup = "form-group"
   val formGroupSm = "form-group-sm"
@@ -44,6 +48,8 @@ object Bootstrap {
   val h4 = "h4"
   val h5 = "h5"
   val h6 = "h6"
+
+  val in = "in"
 
   val inputSm = "input-sm"
   val inputLg = "input-lg"
@@ -90,6 +96,9 @@ object Bootstrap {
   val tableBordered = "table-bordered"
   val tableCondensed = "table-condensed"
   val tableStriped = "table-striped"
+
+  val tabContent = "tab-content"
+  val tabPane = "tab-pane"
 
   val textCenter = "text-center"
   val textLeft = "text-left"
