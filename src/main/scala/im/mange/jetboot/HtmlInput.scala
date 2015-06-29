@@ -14,11 +14,6 @@ object HtmlInput {
   //TODO: make default an Option
   def liveTextArea(name: String, placeholder: String) = LiveTextArea(Field(name), placeholder, "")
 
-  //TODO: looks like there is some notion of a default here too .. i.e. empty or first
-  def select(name: String, options: Seq[(String,String)]) =
-    Select(Field(name), TupleMadness.toTuple("") +: options, "", None)
-
-  //TODO: looks like there is some notion of a default here too .. i.e. empty or first
   def select(name: String, options: Seq[(String,String)], default: Option[String] = None) =
     Select(Field(name), options, "", default)
 
@@ -43,9 +38,4 @@ object HtmlInput {
   def percentageBox(name: String, default: Option[BigDecimal]) = PercentageBox(Field(name), default)
 
   def decimalBox(name: String, default: Option[BigDecimal] = None) = DecimalBox(Field(name), default)
-}
-
-//TODO: lose me
-object TupleMadness {
-  def toTuple[T](t: T): (T,T) = t -> t
 }
