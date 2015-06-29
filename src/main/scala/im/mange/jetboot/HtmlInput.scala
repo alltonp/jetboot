@@ -38,14 +38,11 @@ object HtmlInput {
   def datePicker(name: String, default: Option[LocalDate] = None, allowWeekends: Boolean = true) =
     DatePicker(Field(name), default, allowWeekends)
 
-  //TODO: make default an Option
-  def integerBox(name: String) = IntegerBox(Field(name))
+  def integerBox(name: String, default: Option[Long] = None) = IntegerBox(Field(name), default)
 
-  //TODO: make default an Option
-  def percentageBox(name: String, default: BigDecimal = BigDecimal(0)) = PercentageBox(Field(name), default)
+  def percentageBox(name: String, default: Option[BigDecimal]) = PercentageBox(Field(name), default)
 
-  //TODO: make default an Option
-  def decimalBox(name: String, default: BigDecimal = BigDecimal(0)) = DecimalBox(Field(name), default)
+  def decimalBox(name: String, default: Option[BigDecimal] = None) = DecimalBox(Field(name), default)
 }
 
 //TODO: lose me
