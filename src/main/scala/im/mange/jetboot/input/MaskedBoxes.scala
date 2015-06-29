@@ -11,8 +11,10 @@ import net.liftweb.http.js.{JsCmd, JsExp}
 import net.liftweb.util.Helpers._
 
 //TIP: this depends on - https://github.com/RobinHerbots/jquery.inputmask (>= 3.1.62)
-class MaskedBox(val field: Field, default: String, readOnly: Boolean = false, mask: String) extends FormInput {
-  var value = default
+class MaskedBox(val field: Field, default: Option[String], readOnly: Boolean = false, mask: String) extends FormInput {
+  var value = safeDefault
+
+  private def safeDefault = default getOrElse "0"
 
   private def js = s"""$$(document).ready(function () {{
      |$$('#$id').inputmask();
@@ -23,21 +25,21 @@ class MaskedBox(val field: Field, default: String, readOnly: Boolean = false, ma
     <script type="text/javascript">{js}</script>
     </div>
 
-  def baseElement = SHtml.text(default, onSubmit, "id" → id, "style" → styles.render, "class" → classes.render,
+  def baseElement = SHtml.text(value, onSubmit, "id" → id, "style" → styles.render, "class" → classes.render,
     "data-inputmask" → mask, if (readOnly) "disabled" → s"$readOnly" else "id" → id)
 
   private def onSubmit(value: String) { this.value = value }
 
   def onKeyUp (handler: String ⇒ JsCmd): this.type = addEvents(Event.onKeyUp -> handler)
 
-  override def reset = Js.setElementValue(id, default) & (if (readOnly) Js.disableElement(id) else Js.enableElement(id))
+  override def reset = Js.setElementValue(id, safeDefault) & (if (readOnly) Js.disableElement(id) else Js.enableElement(id))
 
   //TODO: need to override init with the JS inputmask init stuff
 }
 
 class NumericBox(field: Field,
                  alias: String = "numeric",
-                 default: String = "0",
+                 default: Option[String],
                  readOnly: Boolean = false,
                  autoGroup: Boolean = true,
                  groupSeparator: String = ",",
@@ -45,7 +47,7 @@ class NumericBox(field: Field,
                  allowMinus: Boolean = false,
                  mask: String = "'suffix': ''")
 
-  extends MaskedBox(field, default.toString, readOnly, mask = s"""
+  extends MaskedBox(field, default, readOnly, mask = s"""
                                                               |'alias': '$alias',
                                                               |'autoGroup': $autoGroup,
                                                               |'groupSeparator': ',',
@@ -58,11 +60,11 @@ class NumericBox(field: Field,
                                                               |$mask""".stripMargin)
 
 object IntegerBox {
-  def apply(field: Field) = new IntegerBox(field)
+  def apply(field: Field, default: Option[Long] = None) = new IntegerBox(field, default)
 }
 
 class IntegerBox(field: Field,
-                 default: Long = 0,
+                 default: Option[Long],
                  readOnly: Boolean = false,
                  autoGroup: Boolean = true,
                  groupSeparator: String = ",",
@@ -71,15 +73,15 @@ class IntegerBox(field: Field,
                  allowPlus: Boolean = false,
                  allowMinus: Boolean = false)
 
-  extends NumericBox(field, "integer", default.toString, readOnly, autoGroup, groupSeparator, allowPlus, allowMinus,
+  extends NumericBox(field, "integer", default.map(_.toString), readOnly, autoGroup, groupSeparator, allowPlus, allowMinus,
     mask = s"'min': $min,\n'max': $max")
 
 object DecimalBox {
-  def apply(field: Field, default: BigDecimal = BigDecimal(0)) = new DecimalBox(field, default)
+  def apply(field: Field, default: Option[BigDecimal] = None) = new DecimalBox(field, default)
 }
 
 class DecimalBox(field: Field,
-                 default: BigDecimal = BigDecimal(0),
+                 default: Option[BigDecimal],
                  readOnly: Boolean = false,
                  autoGroup: Boolean = true,
                  groupSeparator: String = ",",
@@ -91,7 +93,7 @@ class DecimalBox(field: Field,
                  allowMinus: Boolean = false,
                  mask: String = "'suffix': ''")
 
-  extends NumericBox(field, "decimal", default.toString(), readOnly, autoGroup, groupSeparator, allowPlus, allowMinus,
+  extends NumericBox(field, "decimal", default.map(_.toString()), readOnly, autoGroup, groupSeparator, allowPlus, allowMinus,
     mask = s"""'digits': '$digits',
               |'digitsOptional': $digitsOptional,
               |'min': $min,
@@ -99,11 +101,11 @@ class DecimalBox(field: Field,
               |$mask""".stripMargin)
 
 object PercentageBox {
-  def apply(field: Field, default: BigDecimal = BigDecimal(0)) = new PercentageBox(field, default)
+  def apply(field: Field, default: Option[BigDecimal] = None) = new PercentageBox(field, default)
 }
 
 class PercentageBox(field: Field,
-                    default: BigDecimal = BigDecimal(0),
+                    default: Option[BigDecimal],
                     readOnly: Boolean = false,
                     autoGroup: Boolean = true,
                     groupSeparator: String = ",",
