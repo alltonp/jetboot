@@ -6,6 +6,7 @@ import net.liftweb.http.SHtml
 import net.liftweb.http.js.JE.JsRaw
 import net.liftweb.util.Helpers._
 
+@deprecated("Use HtmlInput instead", "01/05/2015")
 trait TextBox extends Renderable with Styleable with Disableable with Hideable {
   val placeholder: String
 
