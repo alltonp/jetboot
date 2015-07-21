@@ -20,3 +20,5 @@ case class A(id: String, content: Renderable, onClick: () => JsCmd, ajax: Boolea
 case class LinkAnchor(id: String, url: String, content: Renderable, target: Option[String]) extends Renderable with Styleable {
   def render = <a href={url} id={id} target={target.getOrElse("")} class={classes.render} style={styles.render}>{content}</a>
 }
+
+
