@@ -1,13 +1,18 @@
 package im.mange.jetboot.html
 
 import im.mange.jetboot.{Styleable, Renderable}
+import net.liftweb.{json, http, util, common}
+import net.liftweb.http.{S, SHtml}
 import net.liftweb.http.SHtml._
-import net.liftweb.http.js.JsCmd
+import net.liftweb.http.js.{JsCmds, JE, JsCmd}
 
 case class A(id: String, content: Renderable, onClick: () => JsCmd, ajax: Boolean) extends Renderable with Styleable {
   def render = {
-    if (ajax) a(onClick, content.render, "id" → id, "style" → styles.render, "class" → classes.render)
-    else a(content.render, onClick(), "id" → id, "style" → styles.render, "class" → classes.render)
+    val attributes: Seq[(String, String)] = Map("id" → id, "style" → styles.render, "class" → classes.render).toSeq
+    val elemAttrs = ElemAttr.strSeqToElemAttr(attributes)
+    if (ajax) a(onClick, content.render, elemAttrs:_*)
+    //TODO: need to check this actually does the right thing ...
+    else a(content.render, onClick(), elemAttrs:_*)
   }
 }
 
