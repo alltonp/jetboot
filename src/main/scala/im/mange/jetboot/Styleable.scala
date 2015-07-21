@@ -1,6 +1,6 @@
 package im.mange.jetboot
 
-import im.mange.jetboot.css.{Styles, Style, Classes}
+import im.mange.jetboot.css.{Classes, Style, Styles}
 
 trait Styleable {
   var classes: Classes = Classes()
@@ -13,3 +13,5 @@ trait Styleable {
   def addClasses(c: String*): this.type = { classes.add(c:_*); this }
   def addStyles(s: Style*): this.type = { styles.add(s:_*); this }
 }
+
+
