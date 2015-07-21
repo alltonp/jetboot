@@ -4,7 +4,7 @@ import im.mange.jetboot.html._
 import net.liftweb.http.js.JsCmd
 
 object Html {
-  def a(id: String, content: Renderable, onClick: JsCmd, ajax: Boolean = true) = A(id, content, onClick, ajax)
+  def a(id: String, content: Renderable, onClick: () => JsCmd, ajax: Boolean = true) = A(id, content, onClick, ajax)
   def hyperlink(id: String, content: Renderable, url: String, target: Option[String] = None) = LinkAnchor(id, url, content, target)
 
   def div(id: Option[String], content: Renderable*) = Div(id.getOrElse(""), Composite(content:_*))

@@ -4,10 +4,10 @@ import im.mange.jetboot.{Styleable, Renderable}
 import net.liftweb.http.SHtml._
 import net.liftweb.http.js.JsCmd
 
-case class A(id: String, content: Renderable, onClick: JsCmd, ajax: Boolean) extends Renderable with Styleable {
+case class A(id: String, content: Renderable, onClick: () => JsCmd, ajax: Boolean) extends Renderable with Styleable {
   def render = {
-    if (ajax) a(() ⇒ onClick, content.render, "id" → id, "style" → styles.render, "class" → classes.render)
-    else a(content.render, onClick, "id" → id, "style" → styles.render, "class" → classes.render)
+    if (ajax) a(onClick, content.render, "id" → id, "style" → styles.render, "class" → classes.render)
+    else a(content.render, onClick(), "id" → id, "style" → styles.render, "class" → classes.render)
   }
 }
 
