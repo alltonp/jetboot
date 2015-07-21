@@ -2,7 +2,7 @@ package im.mange.jetboot.widget
 
 import im.mange.jetboot._
 import im.mange.jetboot.css.Classes
-import net.liftweb.http.SHtml._
+import net.liftweb.http.SHtml
 
 //TIP: http://www.plugolabs.com/twitter-bootstrap-button-generator-3/
 //<button class="btn btn-success btn-xs">foo <span class="glyphicon glyphicon-chevron-right"></span></button>
@@ -24,7 +24,9 @@ case class Collapsible(id: String, label: String, theContent: Renderable, button
     )
 
   private def displayExpander() = {
-    R(a(() => toggle(),
+    //TODO: use Html.a()
+
+    R(SHtml.a(() => toggle(),
       <button type="button" class={s"btn ${buttonClasses.render}" + (if (expanded) " active" else "")} data-toggle="button" style="font-weight: bold;" id={link.id}>{icon().render}</button>,
       "style" -> "text-decoration: none;"
     ))
