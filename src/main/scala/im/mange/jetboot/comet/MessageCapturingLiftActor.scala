@@ -1,6 +1,5 @@
 package im.mange.jetboot.comet
 
-import im.mange.jetboot.Renderable
 import net.liftweb.actor.LiftActor
 import net.liftweb.http.CometActor
 import net.liftweb.http.js.JsCmd
@@ -25,10 +24,6 @@ trait MessageCapturingCometActor extends CometActor with BaseMessageCapturingAct
   override final def lowPriority = {
     case x => doOnMessage(x)
   }
-}
-
-trait CometAgent extends Renderable {
-  def on: PartialFunction[Any, JsCmd]
 }
 
 trait MessageCapturingCometAgent extends CometAgent with BaseMessageCapturingActor {
