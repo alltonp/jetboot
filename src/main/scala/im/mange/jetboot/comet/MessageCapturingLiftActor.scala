@@ -27,17 +27,17 @@ trait MessageCapturingCometActor extends CometActor with BaseMessageCapturingAct
   }
 }
 
-//trait MessagableAgent extends Renderable {
-//  def on(message: Any): JsCmd
-//  //TODO: should we have onModelChanged() ? at which point this is then no-longer jetbootable
-//}
-//
-//trait MessageCapturingAgent extends MessagableAgent with BaseMessageCapturingActor {
-//  override final def on(message: Any): JsCmd = {
-//    case x => doOnMessage(x)
-//  }
-//}
+trait CometAgent extends Renderable {
+  def on: PartialFunction[Any, JsCmd]
+}
 
+trait MessageCapturingCometAgent extends CometAgent with BaseMessageCapturingActor {
+  override final def on: PartialFunction[Any, JsCmd] = {
+    case x => doOnMessage(x); handleMessage(x)
+  }
+
+  def handleMessage: PartialFunction[Any, JsCmd]
+}
 
 trait HandleMultipleTimesMessageHandler {
   def onMessage: List[PartialFunction[Any, Unit]] = Nil
