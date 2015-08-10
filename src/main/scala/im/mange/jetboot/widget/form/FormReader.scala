@@ -26,7 +26,7 @@ class FormReader(formData: FormData) {
 
   def asAmount(fieldName: String) = asString(fieldName).right.map(s => Amount(s))
 
-  def asPercentage(fieldName: String) = Right(Percentage(formData.valueOf(fieldName)))
+  def asPercentage(fieldName: String) = Right(Percentage.fromPercentage(formData.valueOf(fieldName)))
 
   def asString(fieldName: String) = Right(formData.valueOf(fieldName))
 

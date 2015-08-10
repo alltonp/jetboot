@@ -15,7 +15,7 @@ resolvers ++= Seq(
 
 libraryDependencies ++= Seq(
   "net.liftweb" %% "lift-webkit" % "[2.6.1,2.7.0]" % "provided",
-  "im.mange" %% "little" % "[0.0.7,0.1.0]" % "provided"
+  "im.mange" %% "little" % "[0.0.33,0.1.0]" % "provided"
 )
 
 net.virtualvoid.sbt.graph.Plugin.graphSettings
