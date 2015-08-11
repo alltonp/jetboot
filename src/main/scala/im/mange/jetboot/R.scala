@@ -15,7 +15,6 @@ object R {
   def apply(magnets: RenderableMagnet*): R = doIt(magnets.map(_.apply()).toList)
   private def doIt(magnets: Seq[Renderable]) = R(Composite(magnets: _*).render)
 
-  //@deprecated("Use R() instead", "08/05/2015")
   case class Composite(renderables: Renderable*) extends Renderable {
     def render = renderables.foldLeft(NodeSeq.Empty) {(result, r) ⇒ result ++ r.render }
   }
