@@ -20,7 +20,7 @@ trait Page {
 
   protected def decorate(content: NodeSeq): Elem
 
-  private lazy val pathAsList = path.split("/").toList
+  private lazy val pathAsList = path.split("/").toSeq
 
   protected[page] def view: PartialFunction[List[String], Left[() => Full[NodeSeq], Nothing]] = {
     case `pathAsList` ⇒ display()

@@ -9,15 +9,13 @@ object Html {
 
   def div(id: Option[String], content: Renderable*) = Div(id.getOrElse(""), R(content))
   def div(content: Renderable*): Div = div(None, content:_*)
-  //TODO: make Seq
-  def div(content: List[Renderable]): Div = div(None, content:_*)
+//  def div(content: Seq[Renderable]): Div = div(None, content:_*)
 
   def li(content: Renderable*) = Li(R(content))
 
   def span(id: Option[String], content: Renderable*) = Span(id.getOrElse(""), R(content))
   def span(content: Renderable*): Span = span(None, R(content))
-  //TODO: make Seq
-  def span(content: List[Renderable]): Span = span(None, R(content))
+//  def span(content: Seq[Renderable]): Span = span(None, R(content))
   def span(id: Option[String], content: String): Span = span(id, R(content))
 
   def ul(content: Renderable*) = Ul(R(content))

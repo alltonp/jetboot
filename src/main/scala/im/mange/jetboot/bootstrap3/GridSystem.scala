@@ -11,7 +11,7 @@ object GridSystem {
   def row(spans: Column*) = Row(spans)
   def col(columns: Int, content: Renderable, offset: Int) = Column(columns, content, offset)
   def col(columns: Int, content: Renderable*): Column = col(columns, R(content), 0)
-  def col(columns: Int, content: List[Renderable]): Column = col(columns, R(content), 0)
+//  def col(columns: Int, content: Seq[Renderable]): Column = col(columns, R(content), 0)
 }
 
 case class Container(rows: Seq[Row], fluid: Boolean = false) extends Renderable {

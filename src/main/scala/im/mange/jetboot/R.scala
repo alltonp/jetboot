@@ -12,7 +12,7 @@ object R {
   implicit def fromNodeSeq(n: NodeSeq) = new RenderableMagnet { def apply() = R(n) }
 
   def apply(): Renderable = R(NodeSeq.Empty)
-  def apply(magnets: RenderableMagnet*): R = doIt(magnets.map(_.apply()).toList)
+  def apply(magnets: RenderableMagnet*): R = doIt(magnets.map(_.apply()))
   private def doIt(magnets: Seq[Renderable]) = R(Composite(magnets: _*).render)
 
   case class Composite(renderables: Renderable*) extends Renderable {

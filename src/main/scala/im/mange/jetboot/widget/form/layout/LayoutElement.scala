@@ -12,7 +12,7 @@ trait LayoutElement extends Renderable {
 }
 
 case class FormGroup(elements: Seq[LayoutElement]) extends Renderable {
-  def render = div(elements.toList).classes(formGroup/*, formGroupSm*/).styles(marginBottom("5px")).render
+  def render = div(elements:_*).classes(formGroup/*, formGroupSm*/).styles(marginBottom("5px")).render
 }
 
 case class ControlLabel(columns: Int, label: Renderable) extends LayoutElement {
