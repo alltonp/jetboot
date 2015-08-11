@@ -48,7 +48,7 @@ case class FormLayout(id: String, private val groups: Seq[FormGroup], prefixIdsW
     div(
       R(<form id={form.id} class="lift:form.ajax">
         <div class="form-horizontal">
-          {R(groups.toList).render}
+          {R(groups).render}
         </div>
       </form>
       )
