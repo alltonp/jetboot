@@ -18,7 +18,7 @@ case class Collapsible(id: String, label: String, theContent: Renderable, button
   def render = contentHolder.render
 
   private def content =
-    Composite(
+    R(
       R(<span>{displayExpander().render}</span>),
       collapsibleContent
     )

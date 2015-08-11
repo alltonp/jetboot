@@ -7,25 +7,25 @@ object Html {
   def a(id: String, content: Renderable, onClick: () => JsCmd, ajax: Boolean = true) = A(id, content, onClick, ajax)
   def hyperlink(id: String, content: Renderable, url: String, target: Option[String] = None) = LinkAnchor(id, url, content, target)
 
-  def div(id: Option[String], content: Renderable*) = Div(id.getOrElse(""), Composite(content:_*))
+  def div(id: Option[String], content: Renderable*) = Div(id.getOrElse(""), R(content))
   def div(content: Renderable*): Div = div(None, content:_*)
   //TODO: make Seq
   def div(content: List[Renderable]): Div = div(None, content:_*)
 
-  def li(content: Renderable*) = Li(Composite(content:_*))
+  def li(content: Renderable*) = Li(R(content))
 
-  def span(id: Option[String], content: Renderable*) = Span(id.getOrElse(""), Composite(content:_*))
-  def span(content: Renderable*): Span = span(None, Composite(content:_*))
+  def span(id: Option[String], content: Renderable*) = Span(id.getOrElse(""), R(content))
+  def span(content: Renderable*): Span = span(None, R(content))
   //TODO: make Seq
-  def span(content: List[Renderable]): Span = span(None, Composite(content:_*))
+  def span(content: List[Renderable]): Span = span(None, R(content))
   def span(id: Option[String], content: String): Span = span(id, R(content))
 
-  def ul(content: Renderable*) = Ul(Composite(content:_*))
+  def ul(content: Renderable*) = Ul(R(content))
 
   def table(thead: Thead, tbody: Tbody) = Table(thead, tbody)
-  def thead(content: Renderable*) = Thead(Composite(content:_*))
-  def tbody(content: Renderable*) = Tbody(Composite(content:_*))
-  def tr(id: Option[String], content: Renderable*) = Tr(id, Composite(content:_*))
+  def thead(content: Renderable*) = Thead(R(content))
+  def tbody(content: Renderable*) = Tbody(R(content))
+  def tr(id: Option[String], content: Renderable*) = Tr(id, R(content))
   def th(content: Renderable) = Th(content)
   def th(content: String): Th = th(R(content))
   def td(content: Renderable) = Td(content)

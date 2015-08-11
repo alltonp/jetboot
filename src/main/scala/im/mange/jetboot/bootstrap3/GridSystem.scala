@@ -1,7 +1,7 @@
 package im.mange.jetboot.bootstrap3
 
 import im.mange.jetboot.bootstrap3.Bootstrap._
-import im.mange.jetboot.{Composite, Renderable, Styleable}
+import im.mange.jetboot.{R, Renderable, Styleable}
 
 //TIP: for full-width use: "padding: 0 15px"
 object GridSystem {
@@ -10,8 +10,8 @@ object GridSystem {
   def containerFluid(rows: Row*) = Container(rows, fluid = true)
   def row(spans: Column*) = Row(spans)
   def col(columns: Int, content: Renderable, offset: Int) = Column(columns, content, offset)
-  def col(columns: Int, content: Renderable*): Column = col(columns, Composite(content:_*), 0)
-  def col(columns: Int, content: List[Renderable]): Column = col(columns, Composite(content:_*), 0)
+  def col(columns: Int, content: Renderable*): Column = col(columns, R(content), 0)
+  def col(columns: Int, content: List[Renderable]): Column = col(columns, R(content), 0)
 }
 
 case class Container(rows: Seq[Row], fluid: Boolean = false) extends Renderable {
