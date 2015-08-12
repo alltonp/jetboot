@@ -5,6 +5,8 @@ import net.liftweb.http.S._
 import net.liftweb.http.SHtml.ElemAttr
 import net.liftweb.http.js.JE.Str
 
+//TIP: this is the model for all future Elements ...
+//TODO: make base be the smallest possible .. i.e remove class and style
 case class Li(content: Renderable) extends Renderable with Styleable with HasAttributes {
   def render = {
     val allAttributes: Seq[(String, String)] = Map("style" → styles.render, "class" → classes.render).toSeq ++ attributes.toSeq
