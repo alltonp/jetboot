@@ -21,4 +21,5 @@ object SimpleTable {
   def trow(magnets: Seq[RenderableMagnet]): TableRow = trow(None, magnets)
 //  def trow(id: Option[String], magnets: RenderableMagnet*): TableRow = TableRow(id, magnets.map(_.apply()))
   def trow(id: Option[String], magnets: Seq[RenderableMagnet]): TableRow = TableRow(id, magnets.map(_.apply()))
+
 }
