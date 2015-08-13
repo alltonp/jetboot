@@ -3,5 +3,6 @@ package im.mange.jetboot
 trait HasAttributes {
   var attributes = Map.empty[String, String]
 
-  def attribute(key: String, value: String): this.type = { attributes = attributes.updated(key, value); this }
+  //TODO: should probably support maps ...
+  def addAttribute(key: String, value: String): this.type = { attributes = attributes.updated(key, value); this }
 }
