@@ -42,6 +42,7 @@ trait StyleKeys {
   def padding(topAndBottom: String, rightAndLeft: String) = Style("padding", Seq(topAndBottom, rightAndLeft).mkString(" "))
   def padding(value: String) = Style("padding", value)
   def position(value: String) = Style("position", value)
+  def top(value: String) = Style("top", value)
   def textAlign(value: String) = Style("text-align", value)
   def textDecoration(value: String) = Style("text-decoration", value)
   def textOverflow(value: String) = Style("text-overflow", value)
