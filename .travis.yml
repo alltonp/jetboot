@@ -13,3 +13,7 @@ env:
   - secure: QkrWNLY+rglmAYCPYSWMPJrcA0SULUh0p7kUorV5jpua/mMRCES47CCIxi7i07SKqXbGiuoSKkTXriCqdTueVkKpU8LUE0XlZB1JJEYVp9Y7Lysn6kjFnrwBgCucDcnNp/tCeWXb4mKKcs1jyl9D77yKuUj+GLmw4wCF02vOnbk=
 notifications:
   email: false
+sudo: false
+cache:
+  directories:
+  - .sbt
