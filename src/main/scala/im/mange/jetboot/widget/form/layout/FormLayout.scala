@@ -5,8 +5,9 @@ import im.mange.jetboot.bootstrap3.Bootstrap._
 import im.mange.jetboot.input.Field
 import im.mange.jetboot.widget.SimpleForm
 import im.mange.jetboot.widget.form.FieldError
+import net.liftweb.http.js.JsCmds.Script
 
-case class FormLayout(id: String, private val groups: Seq[FormGroup], prefixIdsWithParent: Boolean) extends Renderable with Clearable with Resettable with Initialisable with Focusable with Disableable {
+case class FormLayout(id: String, private val groups: Seq[FormGroup], prefixIdsWithParent: Boolean) extends Renderable with Clearable with Resettable with Focusable with Disableable {
   private val controls = groups.map(_.elements).flatten.map {
     case f: FormControl => Some(f)
     case _ => None
@@ -36,7 +37,6 @@ case class FormLayout(id: String, private val groups: Seq[FormGroup], prefixIdsW
   private def focusFirst(errors: Seq[FieldError]) = errors.headOption.fold(Js.nothing)(fe =>
     controls.find(c => c.formInput.field.name == fe.fieldName).fold(Js.nothing)(_.formInput.focus))
 
-  override def init = form.init
   override def focus = form.focus
   override def clear = errors(Nil) & form.clear & form.enable & focus
   override def reset = errors(Nil) & form.reset & form.enable & focus
@@ -54,6 +54,6 @@ case class FormLayout(id: String, private val groups: Seq[FormGroup], prefixIdsW
       )
     )
     .classes(containerFluid)
-    .render
+    .render ++ Script(form.init)
   }
 }
