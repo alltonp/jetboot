@@ -8,10 +8,10 @@ import im.mange.jetboot.widget.form.FieldError
 import net.liftweb.http.js.JsCmds.Script
 
 case class FormLayout(id: String, private val groups: Seq[FormGroup], prefixIdsWithParent: Boolean) extends Renderable with Clearable with Resettable with Focusable with Disableable {
-  private val controls = groups.map(_.elements).flatten.map {
+  private val controls = groups.flatMap(_.elements).flatMap {
     case f: FormControl => Some(f)
     case _ => None
-  }.flatten
+  }
 
   //TODO: find a nicer way to do this
   controls.map(c => {
