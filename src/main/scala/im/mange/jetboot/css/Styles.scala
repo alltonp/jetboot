@@ -70,6 +70,7 @@ trait StyleValues {
   val none = "none"
   val nowrap = "nowrap"
   val right = "right"
+  val relative = "relative"
   val scroll = "scroll"
   val small = "small"
   val smaller = "smaller"
