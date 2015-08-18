@@ -104,4 +104,7 @@ object Bootstrap {
   val textLeft = "text-left"
   val textRight = "text-right"
   val textJustify = "text-justify"
+
+  val nav = "nav"
+  val navbarNav = "navbar-nav"
 }
