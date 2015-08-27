@@ -1,12 +1,10 @@
 package im.mange.jetboot.widget.form.layout
 
+import im.mange.jetboot.Bss._
 import im.mange.jetboot._
-import im.mange.jetboot.bootstrap3.Bs
-import im.mange.jetboot.bootstrap3.Bss._
+import im.mange.jetboot.widget.form.FieldError
 import im.mange.jetpac._
 import im.mange.jetpac.input.Field
-import im.mange.jetboot.widget.Forms
-import im.mange.jetboot.widget.form.FieldError
 import net.liftweb.http.js.JsCmds.Script
 
 case class FormLayout(id: String, private val groups: Seq[FormGroup], prefixIdsWithParent: Boolean) extends Renderable with Clearable with Resettable with Focusable with Disableable {

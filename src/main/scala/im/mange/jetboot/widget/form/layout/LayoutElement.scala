@@ -1,9 +1,10 @@
 package im.mange.jetboot.widget.form.layout
 
+import im.mange.jetboot.Bss
 import im.mange.jetpac._
 import Css._
 import Html._
-import im.mange.jetboot.bootstrap3.Bss._
+import Bss._
 import im.mange.jetpac.input.CheckBox
 import im.mange.jetboot.widget.form.{FieldError, FormInput}
 
@@ -24,7 +25,7 @@ case class RenderableElement(columns: Int, renderable: Renderable) extends Layou
 }
 
 case class FormControl(columns: Int, formInput: FormInput) extends LayoutElement {
-  import im.mange.jetboot.bootstrap3.Bss._
+  import Bss._
 
   def id = s"fc_${formInput.id}"
 

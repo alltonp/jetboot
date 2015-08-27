@@ -1,4 +1,4 @@
-package im.mange.jetboot.bootstrap3
+package im.mange.jetboot
 
 object Bss {
   val active = "active"
