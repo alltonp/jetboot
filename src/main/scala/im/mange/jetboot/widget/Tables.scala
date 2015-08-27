@@ -9,7 +9,7 @@ trait Tables {
   implicit def fromString(ss: String) = new RenderableMagnet { def apply() = R(ss) }
   implicit def fromR(r: Renderable) = new RenderableMagnet { def apply() = r }
 
-  def simpleTable(headers: TableHeaders, rows: Seq[TableRow]) = Table(TableModel(headers, rows))
+  def table(headers: TableHeaders, rows: Seq[TableRow]) = Table(TableModel(headers, rows))
   def headers(tableHeaders: Seq[TableHeader]) = TableHeaders(tableHeaders)
   def header(r: Renderable) = TableHeader(r)
   def header(s: String) = TableHeader(R(s))
