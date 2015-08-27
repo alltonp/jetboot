@@ -7,6 +7,7 @@ import net.liftweb.http.js.JsCmd
 import net.liftweb.util.Helpers._
 import org.joda.time.LocalDate
 
+//TODO: should this really be in jetboot as it depends on external lib?
 //TIP: this depends on https://eonasdan.github.io/bootstrap-datetimepicker/
 case class DatePicker(field: Field, default: Option[LocalDate], allowWeekends: Boolean = true) extends FormInput {
   private val defaultStr = default.map(_.toString("dd/MM/yyyy")).getOrElse("")

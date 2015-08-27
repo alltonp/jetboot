@@ -6,6 +6,7 @@ import net.liftweb.http.SHtml
 import net.liftweb.http.js.JsCmd
 import net.liftweb.util.Helpers._
 
+//TODO: should this really be in jetboot as it depends on external lib?
 //TIP: this depends on - https://github.com/RobinHerbots/jquery.inputmask (>= 3.1.62)
 class MaskedBox(val field: Field, default: Option[String], readOnly: Boolean = false, mask: String) extends FormInput {
   var value = safeDefault

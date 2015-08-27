@@ -6,6 +6,7 @@ import net.liftweb.http.js.JsCmd
 import net.liftweb.http.SHtml
 import net.liftweb.util.Helpers._
 
+@deprecated("Use TextArea instead", "01/05/2015")
 case class LiveTextArea(field: Field, placeholder: String, default: String) extends FormInput {
   var value = default
 
