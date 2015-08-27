@@ -92,6 +92,7 @@ object Bootstrap {
   val table = "table"
   val tableBordered = "table-bordered"
   val tableCondensed = "table-condensed"
+  val tableHover = "table-hover"
   val tableStriped = "table-striped"
 
   val tabContent = "tab-content"
