@@ -24,10 +24,9 @@ case class Thead(content: Renderable) extends Renderable with Styleable {
   def render = <thead class={classes.render} style={styles.render}>{content.render}</thead>
 }
 
-//TODO: not sure about this table class here .. that looks like very much a Bootstrap thing
 case class Table(thead: Thead, tbody: Tbody) extends Renderable with Styleable {
   def render =
-    <table class={classes.add("table").render} style={styles.render}>
+    <table class={classes.render} style={styles.render}>
       {thead.render}
       {tbody.render}
     </table>
