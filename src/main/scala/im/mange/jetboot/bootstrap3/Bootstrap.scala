@@ -39,6 +39,7 @@ object Bootstrap {
   val glyphicon = "glyphicon"
   def glyphicon(name: String) = "glyphicon glyphicon-" + name
 
+  val hasError = "has-error "
   val helpBlock = "help-block"
   val hidden = "hidden"
 

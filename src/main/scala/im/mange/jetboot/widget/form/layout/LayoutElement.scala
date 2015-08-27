@@ -28,8 +28,8 @@ case class FormControl(columns: Int, formInput: FormInput) extends LayoutElement
 
   def id = s"fc_${formInput.id}"
 
-  private def helpBlock = span(id = Some(s"hb_${formInput.id}"), "")
-    .classes("help-block", hidden)
+  private val inputHelpBlock = span(id = Some(s"hb_${formInput.id}"), "")
+    .classes(helpBlock, hidden)
     .styles(fontSize(xSmall))
 
   //TODO: ICK .. PA needs to fix jetboot class adding
@@ -40,8 +40,8 @@ case class FormControl(columns: Int, formInput: FormInput) extends LayoutElement
   }
 
   //TODO: pass in the sizing style, so clients can control the sizing
-  def render = div(id = Some(id), formInput, helpBlock).classes(s"col-sm-$columns").render
+  def render = div(id = Some(id), formInput, inputHelpBlock).classes(s"col-sm-$columns").render
 
-  def onError(error: FieldError) = Js.addElementClass(id, "has-error") & helpBlock.fillAndShow(R(error.message))
-  def onSuccess = Js.removeElementClass(id, "has-error") & helpBlock.emptyAndHide
+  def onError(error: FieldError) = Js.addElementClass(id, hasError) & inputHelpBlock.fillAndShow(R(error.message))
+  def onSuccess = Js.removeElementClass(id, hasError) & inputHelpBlock.emptyAndHide
 }
