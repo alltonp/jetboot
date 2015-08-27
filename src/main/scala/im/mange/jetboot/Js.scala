@@ -1,5 +1,5 @@
 package im.mange.jetboot
 
-import im.mange.jetboot.js.JsCmdFactory
+import im.mange.jetpac.js.JsCmdFactory
 
 object Js extends JsCmdFactory

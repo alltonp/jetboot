@@ -1,6 +1,6 @@
 package im.mange.jetboot
 
-import im.mange.jetboot.css.{Classes, Style, Styles}
+import im.mange.jetpac.css.{Classes, Style, Styles}
 
 trait Styleable {
   var classes: Classes = Classes()

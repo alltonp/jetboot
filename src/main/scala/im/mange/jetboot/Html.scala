@@ -1,6 +1,6 @@
 package im.mange.jetboot
 
-import im.mange.jetboot.html._
+import im.mange.jetpac.html._
 import net.liftweb.http.js.JsCmd
 
 object Html {

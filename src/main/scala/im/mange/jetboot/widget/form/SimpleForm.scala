@@ -1,8 +1,8 @@
 package im.mange.jetboot.widget.form
 
 import im.mange.jetboot._
-import im.mange.jetboot.event.EventHandling
-import im.mange.jetboot.input._
+import im.mange.jetpac.event.EventHandling
+import im.mange.jetpac.input._
 import net.liftweb.http.js.JsCmd
 
 trait FormInput extends Input with Styleable with EventHandling with Initialisable with Clearable with Updatable {

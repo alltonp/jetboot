@@ -1,6 +1,6 @@
 package im.mange.jetboot
 
-import im.mange.jetboot.input._
+import im.mange.jetpac.input._
 import net.liftweb.http.js.JsCmd
 import org.joda.time.LocalDate
 

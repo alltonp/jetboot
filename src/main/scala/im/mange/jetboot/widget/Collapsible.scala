@@ -1,7 +1,7 @@
 package im.mange.jetboot.widget
 
 import im.mange.jetboot._
-import im.mange.jetboot.css.Classes
+import im.mange.jetpac.css.Classes
 import net.liftweb.http.SHtml
 
 //TIP: http://www.plugolabs.com/twitter-bootstrap-button-generator-3/

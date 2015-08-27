@@ -1,7 +1,7 @@
 package im.mange.jetboot.widget.table
 
 import im.mange.jetboot.Html._
-import im.mange.jetboot.css.{Classes, Style, Styles}
+import im.mange.jetpac.css.{Classes, Style, Styles}
 import im.mange.jetboot.{Renderable, Styleable}
 
 case class TableHeaders(headers: Seq[TableHeader]) {

@@ -1,6 +1,6 @@
 package im.mange.jetboot.widget
 
-import im.mange.jetboot.css.{Classes, Styles}
+import im.mange.jetpac.css.{Classes, Styles}
 
 import scala.xml.NodeSeq
 
