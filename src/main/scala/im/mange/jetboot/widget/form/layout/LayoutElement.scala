@@ -28,7 +28,8 @@ case class FormControl(columns: Int, formInput: FormInput) extends LayoutElement
 
   def id = s"fc_${formInput.id}"
 
-  private val inputHelpBlock = span(id = Some(s"hb_${formInput.id}"), "")
+  //TODO: this looks like it should be a val .. but it seems it can't be ...
+  private def inputHelpBlock = span(id = Some(s"hb_${formInput.id}"), "")
     .classes(helpBlock, hidden)
     .styles(fontSize(xSmall))
 
