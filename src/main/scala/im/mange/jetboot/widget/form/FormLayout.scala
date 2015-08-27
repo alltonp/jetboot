@@ -3,7 +3,7 @@ package im.mange.jetboot.widget.form
 import im.mange.jetboot.widget.form.layout._
 import im.mange.jetpac.{Renderable, R}
 
-object FormLayout {
+trait FormLayouts {
   def formLayout(id: String, prefixIdsWithParent: Boolean, groups: FormGroup*) = layout.FormLayout(id, groups.toSeq, prefixIdsWithParent)
   def formGroup(elements: LayoutElement*) = FormGroup(elements.toSeq)
   def controlLabel(columns: Int, label: Renderable) = ControlLabel(columns, label)
