@@ -1,7 +1,8 @@
 package im.mange.jetboot.widget.form.layout
 
+import im.mange.jetboot.bootstrap3.Bootstrap
 import im.mange.jetboot.widget.form.FormInput
-import im.mange.jetboot.Bootstrap._
+import Bootstrap._
 import im.mange.jetpac.{Renderable, R}
 
 case class FlowLayoutFormBuilder(id: String, columns: Int = 12, prefixIdsWithParent: Boolean = false, layoutStrategy: LayoutStrategy = DefaultLayoutStrategy()) {

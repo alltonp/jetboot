@@ -1,7 +1,8 @@
 package im.mange.jetboot.widget.form.layout
 
+import im.mange.jetboot.bootstrap3.Bootstrap
 import im.mange.jetboot.widget.form.FormInput
-import im.mange.jetboot.Bootstrap._
+import Bootstrap._
 import im.mange.jetpac.Renderable
 
 case class FixedLayoutFormBuilder(id: String, prefixIdsWithParent: Boolean = false) {

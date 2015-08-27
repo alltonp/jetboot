@@ -2,7 +2,7 @@ package im.mange.jetboot.widget.form
 
 import im.mange.jetpac.{Js, Identifiable}
 import Js._
-import im.mange.jetboot.bootstrap3.Bootstrap._
+import im.mange.jetboot.bootstrap3.Bs._
 import im.mange.jetpac.Identifiable
 import net.liftweb.http.js.JsCmd
 

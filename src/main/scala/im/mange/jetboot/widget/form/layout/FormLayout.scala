@@ -1,7 +1,8 @@
 package im.mange.jetboot.widget.form.layout
 
 import im.mange.jetboot._
-import im.mange.jetboot.bootstrap3.Bootstrap._
+import im.mange.jetboot.bootstrap3.Bootstrap
+import im.mange.jetboot.bootstrap3.Bs._
 import im.mange.jetpac._
 import im.mange.jetpac.input.Field
 import im.mange.jetboot.widget.Forms

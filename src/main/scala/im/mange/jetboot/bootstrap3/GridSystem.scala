@@ -1,6 +1,6 @@
 package im.mange.jetboot.bootstrap3
 
-import im.mange.jetboot.bootstrap3.Bootstrap._
+import im.mange.jetboot.bootstrap3.Bs._
 import im.mange.jetpac.{Styleable, Renderable, R}
 
 //TIP: for full-width use: "padding: 0 15px"
