@@ -1,12 +1,11 @@
-package im.mange.jetboot.input
+package im.mange.jetboot.widget.form
 
 import im.mange.jetboot.Identifiable
 import im.mange.jetboot.Js._
-import im.mange.jetboot.bootstrap3.Bootstrap.{alert, alertDanger, hasError}
+import im.mange.jetboot.bootstrap3.Bootstrap._
 import net.liftweb.http.js.JsCmd
 
 //TODO: this thing really really needs some work ... (/killing)
-
 //TODO: introduce Validatable
 //TODO: is this really more like ValueUpdatable
 //TODO: this has the wrong kind of bootstrap validation, it should be has-errors and not alert, but its a bit of work
@@ -21,13 +20,3 @@ trait Updatable { self: Identifiable =>
   def showError2(message: String): JsCmd =
     addElementClass(id, hasError)
 }
-
-//
-//trait Updatable { self: Identifiable =>
-//
-//  def update(newValue: String): JsCmd =
-//    setElementValue(id, newValue) & removeElementClass(id, "has-error")// & removeElementClass(id, alertDanger)
-//
-//  def showError(message: String): JsCmd =
-//    setElementValue(id, message) & addElementClass(id, "has-error")// & addElementClass(id, alertDanger)
-//}
