@@ -4,7 +4,7 @@ import im.mange.jetboot._
 import im.mange.jetboot.bootstrap3.Bootstrap._
 import im.mange.jetpac._
 import im.mange.jetpac.input.Field
-import im.mange.jetboot.widget.SimpleForm
+import im.mange.jetboot.widget.Forms
 import im.mange.jetboot.widget.form.FieldError
 import net.liftweb.http.js.JsCmds.Script
 
