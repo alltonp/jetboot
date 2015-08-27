@@ -1,4 +1,4 @@
-package im.mange.jetboot.comet
+package im.mange.jetpac.comet
 
 import net.liftweb.http.CometActor
 import net.liftweb.http.js.JsCmd

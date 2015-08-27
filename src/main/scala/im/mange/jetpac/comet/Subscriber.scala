@@ -1,4 +1,4 @@
-package im.mange.jetboot.comet
+package im.mange.jetpac.comet
 
 trait Subscriber {
   def !(msg: Any)

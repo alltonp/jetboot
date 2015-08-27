@@ -1,4 +1,4 @@
-package im.mange.jetboot.comet
+package im.mange.jetpac.comet
 
 import im.mange.jetboot.Renderable
 import net.liftweb.http.js.JsCmd
