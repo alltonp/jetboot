@@ -10,8 +10,8 @@ trait Styleable {
   def classes(c: String*): this.type = classes(Classes(c:_*))
   def styles(s: Styles): this.type = {styles = s; this}
   def styles(s: Style*): this.type = styles(Styles(s:_*))
-  def addClasses(c: String*): this.type = { classes.add(c:_*); this }
-  def addStyles(s: Style*): this.type = { styles.add(s:_*); this }
+  def addClasses(c: String*): this.type = { classes(classes.add(c:_*)) }
+  def addStyles(s: Style*): this.type = { styles(styles.add(s:_*)) }
 }
 
 
