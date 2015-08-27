@@ -4,7 +4,7 @@ import im.mange.jetboot.bootstrap3.Bootstrap._
 import im.mange.jetpac.{Styleable, Renderable, R}
 
 //TIP: for full-width use: "padding: 0 15px"
-object GridSystem {
+trait GridSystem {
   //TODO: fix annoying name clashes with Bootstrap._
   def container(rows: Row*) = Container(rows)
   def containerFluid(rows: Row*) = Container(rows, fluid = true)

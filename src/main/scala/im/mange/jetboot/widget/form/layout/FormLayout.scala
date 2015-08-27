@@ -20,7 +20,7 @@ case class FormLayout(id: String, private val groups: Seq[FormGroup], prefixIdsW
     c.formInput
   })
 
-  val form = SimpleForm.simpleForm(id, controls.map(_.formInput ))
+  val form = Bootstrap.simpleForm(id, controls.map(_.formInput ))
 
   //TODO: colour the label too? label - #A94442; normally grey ....
   //TODO: pass in error class?
