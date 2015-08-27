@@ -65,6 +65,9 @@ object Bootstrap {
   val labelWarning = "label-warning"
   val labelDanger = "label-danger"
 
+  val nav = "nav"
+  val navbarNav = "navbar-nav"
+
   val panel = "panel"
   val panelBody = "panel-body"
   val panelDefault = "panel-default"
@@ -102,7 +105,4 @@ object Bootstrap {
   val textLeft = "text-left"
   val textRight = "text-right"
   val textJustify = "text-justify"
-
-  val nav = "nav"
-  val navbarNav = "navbar-nav"
 }
