@@ -1,8 +1,8 @@
 package im.mange.jetboot.widget.form.layout
 
 import im.mange.jetboot._
-import im.mange.jetboot.bootstrap3.Bootstrap
-import im.mange.jetboot.bootstrap3.Bs._
+import im.mange.jetboot.bootstrap3.Bs
+import im.mange.jetboot.bootstrap3.Bss._
 import im.mange.jetpac._
 import im.mange.jetpac.input.Field
 import im.mange.jetboot.widget.Forms
@@ -21,7 +21,7 @@ case class FormLayout(id: String, private val groups: Seq[FormGroup], prefixIdsW
     c.formInput
   })
 
-  val form = Bootstrap.form(id, controls.map(_.formInput ))
+  val form = Bs.form(id, controls.map(_.formInput ))
 
   //TODO: colour the label too? label - #A94442; normally grey ....
   //TODO: pass in error class?
