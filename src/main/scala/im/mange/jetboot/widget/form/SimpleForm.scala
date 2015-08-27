@@ -6,6 +6,7 @@ import im.mange.jetpac.event.EventHandling
 import im.mange.jetpac.input._
 import net.liftweb.http.js.JsCmd
 
+//TODO: this needs to be jetpac
 trait FormInput extends Input with Styleable with EventHandling with Initialisable with Clearable with Updatable {
   val field: Field
   override def id = field.id

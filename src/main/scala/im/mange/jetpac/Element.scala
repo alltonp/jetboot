@@ -31,8 +31,3 @@ case class Element(id: String) {
 
 //TODO: maybe InitialisableWidget
 //TODO: InteractableWidget
-
-//more thoughts:
-//move to im.yagni.jetboot or it.flatmap.jetboot even
-//jetboot.element
-//jetboot.bootstrap

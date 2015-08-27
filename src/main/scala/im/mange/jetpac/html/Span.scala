@@ -1,6 +1,5 @@
 package im.mange.jetpac.html
 
-import im.mange.jetboot._
 import im.mange.jetpac._
 
 //TODO: I dont think I should be a case class actually - maybe be trait or abstract class with an Object
