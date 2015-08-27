@@ -24,6 +24,7 @@ object Html {
   def thead(content: Renderable*) = Thead(R(content))
   def tbody(content: Renderable*) = Tbody(R(content))
   def tr(id: Option[String], content: Renderable*) = Tr(id, R(content))
+  def tr(content: Renderable*) = Tr(None, R(content))
   def th(content: Renderable) = Th(content)
   def th(content: String): Th = th(R(content))
   def td(content: Renderable) = Td(content)
