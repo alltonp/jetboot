@@ -1,6 +1,6 @@
-package im.mange.jetboot.bootstrap3
+package im.mange.jetboot.bootstrap
 
-import im.mange.jetboot.bootstrap3.typography.Hx
+import im.mange.jetboot.bootstrap.typography.Hx
 import im.mange.jetpac.Renderable
 
 trait Typography {

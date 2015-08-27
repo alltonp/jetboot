@@ -1,4 +1,4 @@
-package im.mange.jetboot.bootstrap3
+package im.mange.jetboot.bootstrap
 
 object BootstrapColours {
   val error = "#a94442"

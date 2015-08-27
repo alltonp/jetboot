@@ -1,4 +1,4 @@
-package im.mange.jetboot.bootstrap3.typography
+package im.mange.jetboot.bootstrap.typography
 
 import im.mange.jetpac.{Renderable, R, Html, Css}
 import Css._

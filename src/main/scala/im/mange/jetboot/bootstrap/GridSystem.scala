@@ -1,4 +1,4 @@
-package im.mange.jetboot.bootstrap3
+package im.mange.jetboot.bootstrap
 
 import im.mange.jetboot.Bss
 import Bss._
