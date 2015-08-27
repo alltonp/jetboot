@@ -1,8 +1,5 @@
 package im.mange.jetboot.bootstrap3
 
-//TODO: should this be called BootstrapStyles instead?
-//TODO: ultamtely include the version so it's Bootstrap3Styles or something
-//TODO: ideally drop the package too, jetboot = bootstrap after all
 object Bss {
   val active = "active"
 
