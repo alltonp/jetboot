@@ -1,6 +1,6 @@
 package im.mange.jetpac.js
 
-import im.mange.jetboot.Js
+import im.mange.jetpac.Js
 import net.liftweb.http.js.JE.{JsRaw, ValById}
 import net.liftweb.http.js.JsCmds.{SetHtml, _}
 import net.liftweb.http.js.jquery.JqJE.{JqAttr, JqGetAttr, JqId, JqPrepend, JqRemove, JqReplace, _}

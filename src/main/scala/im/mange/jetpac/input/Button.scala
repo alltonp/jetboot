@@ -1,6 +1,6 @@
 package im.mange.jetpac.input
 
-import im.mange.jetboot.{Input, Styleable}
+import im.mange.jetpac.{Styleable, Input}
 import net.liftweb.http.SHtml._
 import net.liftweb.http.js.JsCmd
 

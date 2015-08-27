@@ -1,11 +1,11 @@
 package im.mange.jetboot.widget.form.layout
 
-import im.mange.jetboot.Css._
-import im.mange.jetboot.Html._
+import im.mange.jetpac._
+import Css._
+import Html._
 import im.mange.jetboot.bootstrap3.Bootstrap._
 import im.mange.jetpac.input.CheckBox
 import im.mange.jetboot.widget.form.{FieldError, FormInput}
-import im.mange.jetboot.{R, Js, Renderable}
 
 trait LayoutElement extends Renderable {
   val columns: Int

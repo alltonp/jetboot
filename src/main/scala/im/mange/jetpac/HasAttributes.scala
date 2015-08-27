@@ -1,4 +1,4 @@
-package im.mange.jetboot
+package im.mange.jetpac
 
 trait HasAttributes {
   var attributes = Map.empty[String, String]

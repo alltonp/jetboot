@@ -1,6 +1,7 @@
 package im.mange.jetpac.html
 
 import im.mange.jetboot._
+import im.mange.jetpac._
 
 //TODO: I dont think I should be a case class actually - maybe be trait or abstract class with an Object
 //TODO: if we stopped this being a Widget and Hideable, then id would no longer need to be mandatory

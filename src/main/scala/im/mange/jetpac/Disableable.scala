@@ -1,4 +1,4 @@
-package im.mange.jetboot
+package im.mange.jetpac
 
 trait Disableable extends Identifiable {
   def disable = element.disable

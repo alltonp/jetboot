@@ -1,7 +1,7 @@
 package im.mange.jetboot.widget.form
 
 import im.mange.jetboot.widget.form.layout._
-import im.mange.jetboot.{R, Renderable}
+import im.mange.jetpac.{Renderable, R}
 
 object FormLayout {
   def formLayout(id: String, prefixIdsWithParent: Boolean, groups: FormGroup*) = layout.FormLayout(id, groups.toSeq, prefixIdsWithParent)

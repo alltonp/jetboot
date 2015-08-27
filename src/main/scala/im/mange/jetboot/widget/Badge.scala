@@ -1,6 +1,6 @@
 package im.mange.jetboot.widget
 
-import im.mange.jetboot.{Html, Identifiable, R, Renderable}
+import im.mange.jetpac.{Renderable, R, Identifiable, Html}
 
 case class Badge(id: String, value: String) extends Renderable with Identifiable {
   import Html._

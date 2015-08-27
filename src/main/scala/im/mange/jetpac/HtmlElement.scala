@@ -1,4 +1,4 @@
-package im.mange.jetboot
+package im.mange.jetpac
 
 //TODO: should this be styleable (are all html elements styleable?ask w3c) and identifiable (only if id is an Option for the latter)
 trait HtmlElement extends Renderable {

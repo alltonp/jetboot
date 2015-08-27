@@ -1,4 +1,4 @@
-package im.mange.jetboot
+package im.mange.jetpac
 
 trait HideableAndFillable extends Hideable with Fillable {
   def emptyAndHide = element.emptyAndHide

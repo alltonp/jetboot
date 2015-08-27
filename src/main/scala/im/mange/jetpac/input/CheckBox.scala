@@ -1,7 +1,7 @@
 package im.mange.jetpac.input
 
-import im.mange.jetboot.Js
 import im.mange.jetboot.widget.form.FormInput
+import im.mange.jetpac.Js
 import net.liftweb.http.SHtml
 
 case class CheckBox(field: Field, default: Boolean) extends FormInput {

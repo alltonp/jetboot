@@ -1,7 +1,7 @@
 package im.mange.jetboot.widget.form.layout
 
-import im.mange.jetboot.Renderable
 import im.mange.jetboot.widget.form.FormInput
+import im.mange.jetpac.Renderable
 
 trait LayoutStrategy {
   def layout(label: Renderable): Int

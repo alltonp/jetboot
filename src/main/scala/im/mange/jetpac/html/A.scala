@@ -1,10 +1,8 @@
 package im.mange.jetpac.html
 
-import im.mange.jetboot.{HasAttributes, Styleable, Renderable}
-import net.liftweb.{json, http, util, common}
-import net.liftweb.http.{S, SHtml}
+import im.mange.jetpac.{HasAttributes, Renderable, Styleable}
 import net.liftweb.http.SHtml._
-import net.liftweb.http.js.{JsCmds, JE, JsCmd}
+import net.liftweb.http.js.JsCmd
 
 case class A(id: String, content: Renderable, onClick: () => JsCmd, ajax: Boolean) extends Renderable with Styleable with HasAttributes {
   def render = {

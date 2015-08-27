@@ -1,4 +1,4 @@
-import im.mange.jetboot.R
+import im.mange.jetpac.R
 
 object Demo extends App {
   println("Started")

@@ -1,14 +1,11 @@
 package im.mange.jetpac.input
 
-import im.mange.jetboot.{Event, Js}
 import im.mange.jetboot.widget.form.FormInput
+import im.mange.jetpac.{Event, Js}
 import net.liftweb.http.SHtml
 import net.liftweb.http.js.JsCmd
-import org.joda.time.LocalDate
-import net.liftweb.http.SHtml
-import net.liftweb.http.js.JE.JsRaw
-import net.liftweb.http.js.{JsCmd, JsExp}
 import net.liftweb.util.Helpers._
+import org.joda.time.LocalDate
 
 //TIP: this depends on https://eonasdan.github.io/bootstrap-datetimepicker/
 case class DatePicker(field: Field, default: Option[LocalDate], allowWeekends: Boolean = true) extends FormInput {

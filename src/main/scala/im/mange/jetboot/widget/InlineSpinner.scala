@@ -1,6 +1,6 @@
 package im.mange.jetboot.widget
 
-import im.mange.jetboot.{Element, Renderable, Styleable}
+import im.mange.jetpac.{Styleable, Renderable, Element}
 
 //TODO: this should take a Renderable for the content instead
 //TODO: this looks like it should be a Fillable

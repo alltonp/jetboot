@@ -1,7 +1,8 @@
 package im.mange.jetboot.widget
 
 import im.mange.jetboot._
-import im.mange.jetboot.Js._
+import im.mange.jetpac._
+import Js._
 import net.liftweb.http.SHtml
 import net.liftweb.http.js.JE.JsRaw
 import net.liftweb.util.Helpers._

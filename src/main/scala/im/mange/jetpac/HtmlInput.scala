@@ -1,4 +1,4 @@
-package im.mange.jetboot
+package im.mange.jetpac
 
 import im.mange.jetpac.input._
 import net.liftweb.http.js.JsCmd

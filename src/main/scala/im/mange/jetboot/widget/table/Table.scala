@@ -1,8 +1,8 @@
 package im.mange.jetboot.widget.table
 
-import im.mange.jetboot.Html._
+import im.mange.jetpac.{Styleable, Renderable, Html}
+import Html._
 import im.mange.jetpac.css.{Classes, Style, Styles}
-import im.mange.jetboot.{Renderable, Styleable}
 
 case class TableHeaders(headers: Seq[TableHeader]) {
   var theadClasses: Classes = Classes()

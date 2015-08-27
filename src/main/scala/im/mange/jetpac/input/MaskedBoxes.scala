@@ -1,13 +1,9 @@
 package im.mange.jetpac.input
 
-import im.mange.jetboot.{Event, Js}
 import im.mange.jetboot.widget.form.FormInput
+import im.mange.jetpac.{Event, Js}
 import net.liftweb.http.SHtml
 import net.liftweb.http.js.JsCmd
-import org.joda.time.LocalDate
-import net.liftweb.http.SHtml
-import net.liftweb.http.js.JE.JsRaw
-import net.liftweb.http.js.{JsCmd, JsExp}
 import net.liftweb.util.Helpers._
 
 //TIP: this depends on - https://github.com/RobinHerbots/jquery.inputmask (>= 3.1.62)

@@ -1,6 +1,6 @@
 package im.mange.jetpac.html
 
-import im.mange.jetboot.{R, Renderable, Styleable}
+import im.mange.jetpac.{Styleable, Renderable, R}
 import net.liftweb.http.SHtml.ajaxInvoke
 import net.liftweb.http.js.JsCmd
 

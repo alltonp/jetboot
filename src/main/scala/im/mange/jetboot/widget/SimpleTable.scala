@@ -1,7 +1,7 @@
 package im.mange.jetboot.widget
 
-import im.mange.jetboot.{R, Renderable}
 import im.mange.jetboot.widget.table._
+import im.mange.jetpac.{Renderable, R}
 
 object SimpleTable {
   //TIP: http://spray.io/blog/2012-12-13-the-magnet-pattern/

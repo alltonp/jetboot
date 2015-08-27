@@ -1,6 +1,6 @@
 package im.mange.jetpac.html
 
-import im.mange.jetboot.{Styleable, Renderable}
+import im.mange.jetpac.{Styleable, Renderable}
 
 //TODO: okay, theses are definitely all Elements
 

@@ -1,6 +1,6 @@
 package im.mange.jetboot.widget
 
-import im.mange.jetboot.{Disableable, Hideable, Renderable, Styleable}
+import im.mange.jetpac.{Styleable, Renderable, Hideable, Disableable}
 import net.liftweb.http.SHtml
 
 //TODO: this should probably extend Input

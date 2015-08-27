@@ -1,6 +1,7 @@
 package im.mange.jetboot.widget.form
 
 import im.mange.jetboot._
+import im.mange.jetpac._
 import im.mange.jetpac.event.EventHandling
 import im.mange.jetpac.input._
 import net.liftweb.http.js.JsCmd

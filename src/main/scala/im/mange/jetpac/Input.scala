@@ -1,4 +1,4 @@
-package im.mange.jetboot
+package im.mange.jetpac
 
 //TODO: start using this
 //TODO: should this be Hideable? - nah that should be on Widget

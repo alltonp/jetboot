@@ -1,6 +1,7 @@
 package im.mange.jetpac.html
 
 import im.mange.jetboot._
+import im.mange.jetpac._
 import net.liftweb.http.SHtml.ElemAttr
 
 //TODO: for fill() to work we need a proper div, need to think about that a bit

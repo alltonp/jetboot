@@ -1,4 +1,4 @@
-package im.mange.jetboot
+package im.mange.jetpac
 
 trait Fillable extends Identifiable {
   def fill(content: Renderable) = element.fill(content)

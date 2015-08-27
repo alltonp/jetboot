@@ -2,6 +2,7 @@ package im.mange.jetboot.widget.form.layout
 
 import im.mange.jetboot._
 import im.mange.jetboot.bootstrap3.Bootstrap._
+import im.mange.jetpac._
 import im.mange.jetpac.input.Field
 import im.mange.jetboot.widget.SimpleForm
 import im.mange.jetboot.widget.form.FieldError
@@ -43,7 +44,7 @@ case class FormLayout(id: String, private val groups: Seq[FormGroup], prefixIdsW
   override def disable = form.disable
 
   def render = {
-    import im.mange.jetboot.Html._
+    import Html._
 
     div(
       R(<form id={form.id} class="lift:form.ajax">

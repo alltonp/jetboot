@@ -1,7 +1,7 @@
 package im.mange.jetboot.bootstrap3
 
-import im.mange.jetboot.Renderable
 import im.mange.jetboot.bootstrap3.typography.Hx
+import im.mange.jetpac.Renderable
 
 object Typography {
   def h1(heading: Renderable, secondary: Option[Renderable] = None) = Hx(heading, secondary, 1)

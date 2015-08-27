@@ -1,6 +1,6 @@
 package im.mange.jetboot.widget
 
-import im.mange.jetboot.Select
+import im.mange.jetpac.Select
 import net.liftweb.common.Full
 import net.liftweb.http.SHtml
 

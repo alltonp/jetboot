@@ -1,4 +1,4 @@
-package im.mange.jetboot
+package im.mange.jetpac
 
 import scala.xml.NodeSeq
 

@@ -1,7 +1,6 @@
 package im.mange.jetboot.widget
 
-import im.mange.jetboot.{Styleable, Renderable, Input, Hideable}
-import net.liftweb.http.SHtml._
+import im.mange.jetpac.{Input, Hideable}
 import net.liftweb.http.js.JsCmd
 
 //TODO: should this be Styleable? - think no actually because of ButtonPresentation .. but that could be bogus

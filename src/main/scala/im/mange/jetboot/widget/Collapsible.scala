@@ -1,6 +1,7 @@
 package im.mange.jetboot.widget
 
 import im.mange.jetboot._
+import im.mange.jetpac._
 import im.mange.jetpac.css.Classes
 import net.liftweb.http.SHtml
 
@@ -8,7 +9,7 @@ import net.liftweb.http.SHtml
 //<button class="btn btn-success btn-xs">foo <span class="glyphicon glyphicon-chevron-right"></span></button>
 //TODO: ultimate make a Button and pass it in
 case class Collapsible(id: String, label: String, theContent: Renderable, buttonClasses: Classes, expandedByDefault: Boolean = false) extends Renderable {
-  import im.mange.jetboot.Html._
+  import Html._
 
   private var expanded = expandedByDefault
   private val link = Element("collapsibleLink_" + id)
