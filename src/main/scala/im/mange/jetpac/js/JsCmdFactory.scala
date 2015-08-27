@@ -17,7 +17,7 @@ trait JsCmdFactory {
   def disableElement(id: String): JsCmd = JqId(id) ~> JqAttr("disabled", true)
   def enableElement(id: String): JsCmd = JqId(id) ~> JqAttr("disabled", false)
   def focusElement(id: String): JsCmd = Focus(id)
-  //TODO: go after usages of this and use fill instead
+  @deprecated("Use the fill/empty pattern instead", "01/05/2015")
   def replaceElement(id: String, content: NodeSeq): JsCmd = JqId(id) ~> JqReplace(content)
   def removeElement(id: String): JsCmd = JqId(id) ~> JqRemove()
   def removeAllElements(cssClass: String): JsCmd = JqClass(cssClass) ~> JqRemove()

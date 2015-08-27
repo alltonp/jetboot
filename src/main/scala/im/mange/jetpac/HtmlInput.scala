@@ -9,9 +9,11 @@ object HtmlInput {
   def checkBox(name: String, default: Boolean) = CheckBox(Field(name), default)
 
   //TODO: make default an Option
+  @deprecated("Use TextBox instead", "01/05/2015")
   def liveTextBox(name: String, placeholder: String) = LiveTextBox(Field(name), placeholder, "")
 
   //TODO: make default an Option
+  @deprecated("Use TextArea instead", "01/05/2015")
   def liveTextArea(name: String, placeholder: String) = LiveTextArea(Field(name), placeholder, "")
 
   def select(name: String, options: Seq[(String,String)], default: Option[String] = None) =
@@ -29,6 +31,9 @@ object HtmlInput {
 
   def textBox(name: String, placeholder: Option[String] = None, default: Option[String] = None) = 
     TextBox(Field(name), placeholder, default)
+
+  def textArea(name: String, placeholder: Option[String] = None, default: Option[String] = None) =
+    TextArea(Field(name), placeholder, default)
 
   def datePicker(name: String, default: Option[LocalDate] = None, allowWeekends: Boolean = true) =
     DatePicker(Field(name), default, allowWeekends)
