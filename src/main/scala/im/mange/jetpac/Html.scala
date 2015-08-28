@@ -3,7 +3,9 @@ package im.mange.jetpac
 import im.mange.jetpac.html._
 import net.liftweb.http.js.JsCmd
 
-object Html {
+object Html extends HtmlElements
+
+trait HtmlElements {
   def a(id: String, content: Renderable, onClick: () => JsCmd, ajax: Boolean = true) = A(id, content, onClick, ajax)
   def hyperlink(id: String, content: Renderable, url: String, target: Option[String] = None) = LinkAnchor(id, url, content, target)
 
