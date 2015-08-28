@@ -34,8 +34,10 @@ object Bss {
   val formInline = "form-inline"
   val formHorizontal = "form-horizontal"
 
-  //TODO: should probably be pulled out
+  @deprecated("This is going in bootstrap 4, use font-awesome instead", "28/08/2015")
   val glyphicon = "glyphicon"
+
+  @deprecated("This is going in bootstrap 4, use font-awesome instead", "28/08/2015")
   def glyphicon(name: String) = "glyphicon glyphicon-" + name
 
   val hasError = "has-error "
