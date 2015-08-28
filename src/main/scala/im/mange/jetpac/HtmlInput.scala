@@ -5,7 +5,9 @@ import net.liftweb.http.js.JsCmd
 import org.joda.time.LocalDate
 
 //TODO: ultimately merge liveXXX with XXX .. it's just an onChange event that's different
-object HtmlInput {
+object HtmlInput extends HtmlInputElements
+
+trait HtmlInputElements {
   def checkBox(name: String, default: Boolean) = CheckBox(Field(name), default)
 
   //TODO: make default an Option
