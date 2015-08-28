@@ -1,6 +1,5 @@
 package im.mange.jetboot.widget.form.layout
 
-import im.mange.jetboot.Bss._
 import im.mange.jetboot._
 import im.mange.jetboot.widget.form.FieldError
 import im.mange.jetpac._
@@ -53,7 +52,7 @@ case class FormLayout(id: String, private val groups: Seq[FormGroup], prefixIdsW
       </form>
       )
     )
-    .classes(containerFluid)
+    .classes(Bss.containerFluid)
     .render ++ Script(form.init)
   }
 }
