@@ -1,6 +1,8 @@
 package im.mange.jetpac.html
 
-import im.mange.jetpac.{Styleable, Renderable}
+import im.mange.jetpac.event.EventHandling
+import im.mange.jetpac.{Event, Styleable, Renderable}
+import net.liftweb.http.js.JsCmd
 
 //TODO: okay, theses are definitely all Elements
 
@@ -12,8 +14,10 @@ case class Td(content: Renderable) extends Renderable with Styleable {
   def render = <td class={classes.render} style={styles.render}>{content.render}</td>
 }
 
-case class Tr(id: Option[String] ,content: Renderable) extends Renderable with Styleable {
-  def render = <tr id={id.getOrElse("")} class={classes.render} style={styles.render}>{content.render}</tr>
+case class Tr(id: Option[String] ,content: Renderable) extends Renderable with Styleable with EventHandling {
+  def baseElement = <tr id={id.getOrElse("")} class={classes.render} style={styles.render}>{content.render}</tr>
+
+  def onClick(handler: String => JsCmd): this.type = addEvents(Event.onClick -> handler)
 }
 
 case class Tbody(content: Renderable) extends Renderable with Styleable {
