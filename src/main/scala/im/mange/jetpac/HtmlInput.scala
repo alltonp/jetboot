@@ -27,8 +27,10 @@ trait HtmlInputElements {
 //  def select2(id: String, options: Seq[(String,String)], default: String) =
 // Select2(id, options, "", Some(default))
 
+  //TODO: make a version that takes a new style ButtonPresentation
   def submitButton(id: String, value: String, onSubmit: () => JsCmd) = SubmitButton(id, value, onSubmit)
 
+  //TODO: make a version that takes a new style ButtonPresentation
   def button(id: String, value: String, onSubmit: () => JsCmd) = Button(id, value, onSubmit)
 
   def textBox(name: String, placeholder: Option[String] = None, default: Option[String] = None) = 
