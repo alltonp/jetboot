@@ -1,6 +1,8 @@
 package im.mange.jetboot
 
-object Bss {
+object Bss extends BssElements
+
+trait BssElements {
   val active = "active"
 
   val alert = "alert"
