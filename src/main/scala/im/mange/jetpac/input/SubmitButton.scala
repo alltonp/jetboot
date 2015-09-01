@@ -19,5 +19,6 @@ case class SubmitButton(id: String, buttonPresentation: ButtonPresentation, onSu
 
 //  def render = ajaxSubmit(value, onSubmit, "id" -> id, "style" -> styles.render, "class" -> classes.render)
   def render = <input id={id} type="submit" style={buttonPresentation.styles.add(styles.styles:_*).render}
-                      class={buttonPresentation.classes.add(classes.classNames:_*).render}>{ajaxOnSubmit(onSubmit)}</input>
+                      class={buttonPresentation.classes.add(classes.classNames:_*).render}
+                      onclick={ajaxOnSubmit(onSubmit)}></input>
 }
