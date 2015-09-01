@@ -18,9 +18,13 @@ case class SubmitButton(id: String, buttonPresentation: ButtonPresentation, onSu
 
 
 //  def render = ajaxSubmit(value, onSubmit, "id" -> id, "style" -> styles.render, "class" -> classes.render)
-  def render = ajaxOnSubmit(onSubmit)(<input id={id} type="submit" style={buttonPresentation.styles.add(styles.styles:_*).render}
+//  def render = ajaxOnSubmit(onSubmit)(<input id={id} type="submit" style={buttonPresentation.styles.add(styles.styles:_*).render}
+//                      class={buttonPresentation.classes.add(classes.classNames:_*).render}
+//                      ></input>)
+
+  def render = ajaxOnSubmit(onSubmit)(<button id={id} style={buttonPresentation.styles.add(styles.styles:_*).render}
                       class={buttonPresentation.classes.add(classes.classNames:_*).render}
-                      ></input>)
+                      >{buttonPresentation.renderable}</button>)
 
 //  def render = <input id={id} type="submit" style={buttonPresentation.styles.add(styles.styles:_*).render}
 //                      class={buttonPresentation.classes.add(classes.classNames:_*).render}
