@@ -9,8 +9,7 @@ case class Li(content: Renderable) extends Renderable with Styleable with HasAtt
   def render = {
     val allAttributes: Seq[(String, String)] = Map("style" → styles.render, "class" → classes.render).toSeq ++ attributes.toSeq
     val elemAttrs = ElemAttr.strSeqToElemAttr(allAttributes)
-    //TODO: base can be made simpler
-    val base = <li class={classes.render} style={styles.render}>{content.render}</li>
+    val base = <li>{content.render}</li>
     elemAttrs.foldLeft(base)(_ % _)
   }
 }
