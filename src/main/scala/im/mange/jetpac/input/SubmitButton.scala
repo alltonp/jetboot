@@ -5,9 +5,8 @@ import net.liftweb.http.SHtml
 import net.liftweb.http.SHtml._
 import net.liftweb.http.js.JsCmd
 
-//TODO: Styleable must die here ...
-case class SubmitButton(id: String, buttonPresentation: ButtonPresentation, onSubmit: () => JsCmd) extends Input with Styleable {
+case class SubmitButton(id: String, buttonPresentation: ButtonPresentation, onSubmit: () => JsCmd) extends Input {
   def render = ajaxOnSubmit(onSubmit)(<button id={id}
-              style={buttonPresentation.styles.add(styles.styles:_*).render}
-              class={buttonPresentation.classes.add(classes.classNames:_*).render}>{buttonPresentation.renderable.render}</button>)
+              style={buttonPresentation.styles.render}
+              class={buttonPresentation.classes.render}>{buttonPresentation.renderable.render}</button>)
 }
