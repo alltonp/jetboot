@@ -1,8 +1,7 @@
 package im.mange.jetpac.css
 
-
-
-case class Styles(private val styles: Style*) {
+//TODO: make this private again
+case class Styles(/*private val*/styles: Style*) {
   val render = styles.map(_.render).mkString(" ")
   def add(toAdd: Style*) = Styles(toAdd.toList ::: styles.toList)
 }

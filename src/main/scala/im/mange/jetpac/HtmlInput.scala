@@ -31,10 +31,14 @@ trait HtmlInputElements {
   def submitButton(id: String, value: String, onSubmit: () => JsCmd) = SubmitButton(id, value, onSubmit)
 
 //  ButtonPresentation(LabelledIcon("Rebook", Icons.squareO(0)), createButtonSm())
-//  def submitButton(id: String, value: String, onSubmit: () => JsCmd) = SubmitButton(id, value, onSubmit)
+//  def submitButton(id: String, buttonPresentation: ButtonPresentation, onSubmit: () => JsCmd) =
+//    SubmitButton(id, value, onSubmit)
 
-  //TODO: make a version that takes a new style ButtonPresentation
-  def button(id: String, value: String, onSubmit: () => JsCmd) = Button(id, value, onSubmit)
+  @deprecated("Use the one that takes a ButtonPresentation instead", "01/09/2015")
+  def button(id: String, value: String, onSubmit: () => JsCmd): Button = button(id, ButtonPresentation(R(value)), onSubmit)
+
+  def button(id: String, buttonPresentation: ButtonPresentation, onSubmit: () => JsCmd) =
+    Button(id, buttonPresentation, onSubmit)
 
   def textBox(name: String, placeholder: Option[String] = None, default: Option[String] = None) = 
     TextBox(Field(name), placeholder, default)
