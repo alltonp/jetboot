@@ -27,16 +27,16 @@ trait HtmlInputElements {
 //  def select2(id: String, options: Seq[(String,String)], default: String) =
 // Select2(id, options, "", Some(default))
 
-  @deprecated("Use the one that takes a ButtonPresentation instead", "01/09/2015")
-  def submitButton(id: String, value: String, onSubmit: () => JsCmd): SubmitButton =
-    submitButton(id, ButtonPresentation(R(value)), onSubmit)
+//  @deprecated("Use the one that takes a ButtonPresentation instead", "01/09/2015")
+//  def submitButton(id: String, value: String, onSubmit: () => JsCmd): SubmitButton =
+//    submitButton(id, ButtonPresentation(R(value)), onSubmit)
 
   def submitButton(id: String, buttonPresentation: ButtonPresentation, onSubmit: () => JsCmd) =
     SubmitButton(id, buttonPresentation, onSubmit)
 
-  @deprecated("Use the one that takes a ButtonPresentation instead", "01/09/2015")
-  def button(id: String, value: String, onSubmit: () => JsCmd): Button =
-    button(id, ButtonPresentation(R(value)), onSubmit)
+//  @deprecated("Use the one that takes a ButtonPresentation instead", "01/09/2015")
+//  def button(id: String, value: String, onSubmit: () => JsCmd): Button =
+//    button(id, ButtonPresentation(R(value)), onSubmit)
 
   def button(id: String, buttonPresentation: ButtonPresentation, onSubmit: () => JsCmd) =
     Button(id, buttonPresentation, onSubmit)
