@@ -30,6 +30,9 @@ trait HtmlInputElements {
   //TODO: make a version that takes a new style ButtonPresentation
   def submitButton(id: String, value: String, onSubmit: () => JsCmd) = SubmitButton(id, value, onSubmit)
 
+//  ButtonPresentation(LabelledIcon("Rebook", Icons.squareO(0)), createButtonSm())
+//  def submitButton(id: String, value: String, onSubmit: () => JsCmd) = SubmitButton(id, value, onSubmit)
+
   //TODO: make a version that takes a new style ButtonPresentation
   def button(id: String, value: String, onSubmit: () => JsCmd) = Button(id, value, onSubmit)
 
