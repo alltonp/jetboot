@@ -16,11 +16,13 @@ case class Fai(icon: String, size: Int, fixedWidth: Boolean, spin: Boolean, puls
     if (inverse) Some("fa-inverse") else None
   ).flatten.mkString(" ")
 
-  def render = <i class={s"fa fa-$icon $config"}></i>
+  private[fontawesome] def elem = Html.i().classes("fa", s"fa-$icon", s"$config")
+
+  def render = elem.render
 }
 
 case class StackedFai(fai: Fai, large: Boolean) extends Renderable {
-  def render = fai.render
+  def render = fai.elem.addClasses(if (large) "fa-stack-2x" else "fa-stack-1x").render
 }
 
 case class FaStack(icons: Seq[StackedFai], size: Int) extends Renderable {
