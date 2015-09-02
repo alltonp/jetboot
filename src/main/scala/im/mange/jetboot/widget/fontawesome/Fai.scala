@@ -2,7 +2,9 @@ package im.mange.jetboot.widget.fontawesome
 
 import im.mange.jetpac.{R, Html, Renderable}
 
+//TODO: ultimately we will need additionalClasses: Classes ... so support things like: text-danger
 case class Fai(icon: String, size: Int, fixedWidth: Boolean, spin: Boolean, pulse: Boolean, inverse: Boolean) extends Renderable {
+  //TODO: de-dupe
   private val sizeString = size match {
     case 1 => Some("fa-lg")
     case x if x > 1 && x < 6 => Some(s"fa-${x}x")
@@ -26,6 +28,7 @@ case class StackedFai(fai: Fai, large: Boolean) extends Renderable {
 }
 
 case class FaStack(icons: Seq[StackedFai], size: Int) extends Renderable {
+  //TODO: de-dupe
   private val sizeString = size match {
     case 1 => Some("fa-lg")
     case x if x > 1 && x < 6 => Some(s"fa-${x}x")
