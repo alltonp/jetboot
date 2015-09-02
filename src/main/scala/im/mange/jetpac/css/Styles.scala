@@ -48,6 +48,13 @@ trait StyleKeys {
   def width(value: String) = Style("width", value)
   def whiteSpace(value: String) = Style("white-space", value)
   def verticalAlign(value: String) = Style("vertical-align", value)
+
+  //TODO: think about something like this
+  //see: http://www.w3schools.com/cssref/pr_font_font-size.asp
+//  object FontSize {
+//    val small = fontSize(small)
+//  }
+//  val fontSize = FontSize
 }
 
 trait StyleValues {
