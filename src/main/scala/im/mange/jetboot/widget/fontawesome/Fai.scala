@@ -1,9 +1,8 @@
 package im.mange.jetboot.widget.fontawesome
 
-import im.mange.jetpac.{R, Html, Renderable}
+import im.mange.jetpac.{Styleable, R, Html, Renderable}
 
-//TODO: ultimately we will need additionalClasses: Classes ... so support things like: text-danger
-case class Fai(icon: String, size: Int, fixedWidth: Boolean, spin: Boolean, pulse: Boolean, inverse: Boolean) extends Renderable {
+case class Fai(icon: String, size: Int, fixedWidth: Boolean, spin: Boolean, pulse: Boolean, inverse: Boolean) extends Renderable with Styleable {
   //TODO: de-dupe
   private val sizeString = size match {
     case 1 => Some("fa-lg")
@@ -18,7 +17,7 @@ case class Fai(icon: String, size: Int, fixedWidth: Boolean, spin: Boolean, puls
     if (inverse) Some("fa-inverse") else None
   ).flatten.mkString(" ")
 
-  private[fontawesome] def elem = Html.i().classes("fa", s"fa-$icon", s"$config")
+  private[fontawesome] def elem = Html.i().classes(classes).addClasses("fa", s"fa-$icon", s"$config").styles(styles)
 
   def render = elem.render
 }
