@@ -1,6 +1,6 @@
 package im.mange.jetboot
 
-import im.mange.jetboot.widget.fontawesome.{Fas, Fai}
+import im.mange.jetboot.widget.fontawesome.{StackedFai, FaStack, Fai}
 
 object Fa extends FaElements
 
@@ -10,5 +10,7 @@ trait FaElements {
   def fa(icon: String, size: Int = 0, fixedWidth: Boolean = false, spin: Boolean = false, pulse: Boolean = false, inverse: Boolean = false) =
     Fai(icon, size, fixedWidth, spin, pulse, inverse)
 
-  def fas(icons: Seq[Fai], size: Int = 0) = Fas(icons, size)
+  def stack(fai: Fai, large: Boolean = false) = StackedFai(fai, large)
+
+  def faStack(icons: Seq[StackedFai], size: Int = 0) = FaStack(icons, size)
 }

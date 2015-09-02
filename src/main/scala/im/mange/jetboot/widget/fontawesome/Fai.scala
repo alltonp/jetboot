@@ -19,7 +19,11 @@ case class Fai(icon: String, size: Int, fixedWidth: Boolean, spin: Boolean, puls
   def render = <i class={s"fa fa-$icon $config"}></i>
 }
 
-case class Fas(icons: Seq[Fai], size: Int) extends Renderable {
+case class StackedFai(fai: Fai, large: Boolean) extends Renderable {
+  def render = fai.render
+}
+
+case class FaStack(icons: Seq[StackedFai], size: Int) extends Renderable {
   private val sizeString = size match {
     case 1 => Some("fa-lg")
     case x if x > 1 && x < 6 => Some(s"fa-${x}x")
