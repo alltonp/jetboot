@@ -9,4 +9,6 @@ trait FaElements {
 
   def fa(icon: String, size: Int = 0, fixedWidth: Boolean = false, spin: Boolean = false, pulse: Boolean = false) =
     Fai(icon, size, fixedWidth, spin, pulse)
+
+  def fas(icons: Seq[Fai], size: Int = 0) = Fas(icons, size)
 }
