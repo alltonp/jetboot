@@ -1,11 +1,13 @@
 package im.mange.jetboot.widget
 
-import im.mange.jetpac.{Renderable, R, Identifiable, Html}
+import im.mange.jetpac._
 
-case class Badge(id: String, value: String) extends Renderable with Identifiable {
+case class Badge(id: String, value: String) extends Renderable with Identifiable with Styleable {
   import Html._
 
-  private val content = span(Some(id), R(value)).classes("badge", if (value.trim.isEmpty) "hidden" else "")
+  private val content = span(Some(id), R(value))
+    .styles(styles)
+    .classes(classes.add("badge", if (value.trim.isEmpty) "hidden" else ""))
 
   override def render = content.render
 
