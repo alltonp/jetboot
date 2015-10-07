@@ -7,6 +7,7 @@ import net.liftweb.http.js.JsCmd
 case class A(id: String, content: Renderable, onClick: () => JsCmd, ajax: Boolean) extends Renderable with Styleable with HasAttributes {
   def render = {
     //TODO: put this stuff in to WithAttirbutes and make Styleable extend that somehow
+    //TODO: use Attributify()
     val allAttributes: Seq[(String, String)] = Map("id" → id, "style" → styles.render, "class" → classes.render).toSeq ++ attributes.toSeq
     val elemAttrs = ElemAttr.strSeqToElemAttr(allAttributes)
     if (ajax) a(onClick, content.render, elemAttrs:_*)
