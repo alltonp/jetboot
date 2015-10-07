@@ -1,8 +1,10 @@
 package im.mange.jetpac.html
 
 import im.mange.jetpac.event.EventHandling
-import im.mange.jetpac.{Event, Styleable, Renderable}
+import im.mange.jetpac.{HasAttributes, Event, Styleable, Renderable}
 import net.liftweb.http.js.JsCmd
+import net.liftweb.http.SHtml.ElemAttr
+
 
 //TODO: okay, theses are definitely all Elements
 
@@ -10,8 +12,13 @@ case class Th(content: Renderable) extends Renderable with Styleable {
   def render = <th class={classes.render} style={styles.render}>{content.render}</th>
 }
 
-case class Td(content: Renderable) extends Renderable with Styleable {
-  def render = <td class={classes.render} style={styles.render}>{content.render}</td>
+case class Td(content: Renderable) extends Renderable with Styleable with HasAttributes {
+  def render = {
+    val allAttributes: Seq[(String, String)] = Map("style" → styles.render, "class" → classes.render).toSeq ++ attributes.toSeq
+    val elemAttrs = ElemAttr.strSeqToElemAttr(allAttributes)
+    val base = <td>{content.render}</td>
+    elemAttrs.foldLeft(base)(_ % _)
+  }
 }
 
 case class Tr(id: Option[String] ,content: Renderable) extends Renderable with Styleable with EventHandling {
