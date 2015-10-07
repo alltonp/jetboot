@@ -8,8 +8,11 @@ import net.liftweb.http.SHtml.ElemAttr
 
 //TODO: okay, theses are definitely all Elements
 
-case class Th(content: Renderable) extends Renderable with Styleable {
-  def render = <th class={classes.render} style={styles.render}>{content.render}</th>
+case class Th(content: Renderable) extends Renderable with Styleable with HasAttributes {
+  def render = {
+    val allAttributes = Map("style" → styles.render, "class" → classes.render).toSeq ++ attributes.toSeq
+    Attributify(<th>{content.render}</th>, allAttributes)
+  }
 }
 
 case class Td(content: Renderable) extends Renderable with Styleable with HasAttributes {
@@ -19,8 +22,11 @@ case class Td(content: Renderable) extends Renderable with Styleable with HasAtt
   }
 }
 
-case class Tr(id: Option[String] ,content: Renderable) extends Renderable with Styleable with EventHandling {
-  def baseElement = <tr id={id.getOrElse("")} class={classes.render} style={styles.render}>{content.render}</tr>
+case class Tr(id: Option[String] ,content: Renderable) extends Renderable with Styleable with HasAttributes with EventHandling {
+  def baseElement = {
+    val allAttributes = Map("id" -> id.getOrElse(""), "style" → styles.render, "class" → classes.render).toSeq ++ attributes.toSeq
+    Attributify(<tr>{content.render}</tr>, allAttributes)
+  }
 
   def onClick(handler: String => JsCmd): this.type = addEvents(Event.onClick -> handler)
 }
