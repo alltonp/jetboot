@@ -31,18 +31,23 @@ case class Tr(id: Option[String] ,content: Renderable) extends Renderable with S
   def onClick(handler: String => JsCmd): this.type = addEvents(Event.onClick -> handler)
 }
 
-case class Tbody(content: Renderable) extends Renderable with Styleable {
-  def render = <tbody class={classes.render} style={styles.render}>{content.render}</tbody>
+case class Tbody(content: Renderable) extends Renderable with Styleable with HasAttributes {
+  def render = {
+    val allAttributes = Map("style" → styles.render, "class" → classes.render).toSeq ++ attributes.toSeq
+    Attributify(<tbody>{content.render}</tbody>, allAttributes)
+  }
 }
 
-case class Thead(content: Renderable) extends Renderable with Styleable {
-  def render = <thead class={classes.render} style={styles.render}>{content.render}</thead>
+case class Thead(content: Renderable) extends Renderable with Styleable with HasAttributes{
+  def render = {
+    val allAttributes = Map("style" → styles.render, "class" → classes.render).toSeq ++ attributes.toSeq
+    Attributify(<thead>{content.render}</thead>, allAttributes)
+  }
 }
 
-case class Table(thead: Thead, tbody: Tbody) extends Renderable with Styleable {
-  def render =
-    <table class={classes.render} style={styles.render}>
-      {thead.render}
-      {tbody.render}
-    </table>
+case class Table(thead: Thead, tbody: Tbody) extends Renderable with Styleable with HasAttributes {
+  def render = {
+    val allAttributes = Map("style" → styles.render, "class" → classes.render).toSeq ++ attributes.toSeq
+    Attributify(<table>{thead.render}{tbody.render}</table>, allAttributes)
+  }
 }
