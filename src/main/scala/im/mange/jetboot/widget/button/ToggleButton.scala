@@ -8,15 +8,19 @@ import net.liftweb.http.js.JsCmd
 case class ToggleButton(id: String, label: String, buttonClasses: Classes, expandedByDefault: Boolean = false, onCollapse: () => JsCmd, onExpand: () => JsCmd) extends Renderable with Disableable {
   private var expanded = expandedByDefault
   private val link = span(Some(s"${id}_link"), icon())
+  private val expandableId = id + "_toggle"
 
   def render = {
     //TODO: use Html.a()
 
     R(SHtml.a(() => toggle(),
-      <button type="button" class={s"btn ${buttonClasses.render}" + (if (expanded) " active" else "")} data-toggle="button" style="font-weight: bold;" id={id + "_toggle"}>{link.render}</button>,
+      <button type="button" class={s"btn ${buttonClasses.render}" + (if (expanded) " active" else "")} data-toggle="button" style="font-weight: bold;" id={expandableId}>{link.render}</button>,
       "style" -> "text-decoration: none;"
     )).render
   }
+
+  override def disable = Element(expandableId).disable
+  override def enable = Element(expandableId).enable
 
   private def toggle() = {
     if (expanded) {
