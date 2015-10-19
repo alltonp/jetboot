@@ -5,7 +5,7 @@ import im.mange.jetpac.css.Classes
 import net.liftweb.http.SHtml
 import net.liftweb.http.js.JsCmd
 
-case class ToggleButton(id: String, label: String, buttonClasses: Classes, expandedByDefault: Boolean = false, onCollapse: () => JsCmd, onExpand: () => JsCmd) extends Renderable {
+case class ToggleButton(id: String, label: String, buttonClasses: Classes, expandedByDefault: Boolean = false, onCollapse: () => JsCmd, onExpand: () => JsCmd) extends Renderable with Disableable {
   private var expanded = expandedByDefault
   private val link = span(Some(s"${id}_link"), icon())
 
